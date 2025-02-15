@@ -1,0 +1,28 @@
+.navBarLink {
+    display: flex; /* Hacemos que el enlace sea flexible */
+    flex-direction: column; /* Apilamos el ícono y el texto verticalmente */
+    align-items: center; /* Centramos el contenido horizontalmente */
+    text-decoration: none; /* Quitamos el subrayado del enlace */
+    color: white; /* Color del texto */
+    text-align: center; /* Alineamos el texto al centro */
+    justify-content: center;
+    padding: var(--spacing); /* Espaciado interno */
+    font-weight: bold;
+    letter-spacing:2px;
+}
+
+/* Ícono del enlace */
+.navBarIcon {
+    width: 30px; /* Ancho fijo para los íconos */
+    height: 30px; /* Altura fija para los íconos */
+
+}
+
+/* Estado activo del enlace */
+.navBarLink.active {
+  background-color: white; /* Fondo blanco */
+  color: var(--light-green); /* Cambia el color del texto para contrastar */
+}
+.navBarLink.active p {
+  background-color: white; /* Asegura que el texto también cambie de color */
+}

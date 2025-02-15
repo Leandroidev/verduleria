@@ -1,25 +1,28 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-{/*
-to:hacia donde redirige ejemplo /product
-icon:svg del icono
-label: lo que dice debajo del icono    
-*/}
-function NavbarLink({ to, icon, label }) {
+import './NavBarLink.css'
+/**
+ * Props:
+ * - to: Ruta hacia donde redirige el enlace.
+ * - icon: Ícono SVG o componente.
+ * - label: Texto que se muestra debajo del ícono (y se usa para aria-label).
+ * - showLabel: Booleano que indica si se debe mostrar el texto del label.
+ */
+function NavbarLink({ to, icon, label, showLabel = true,showActive = true }) {
   const location = useLocation();
-
   const isActive = location.pathname === to;
 
   return (
     <Link
       to={to}
-      className={`navBarLink ${isActive ? 'active' : ''}`}
-      aria-label={label}
+      className={`navBarLink ${showActive && isActive ? 'active' : ''}`}
+      aria-label={label} // Siempre se usa para accesibilidad
     >
       <div className="navBarIcon">
         {icon}
       </div>
-      <p>{label}</p>
+      {/* Renderiza el label solo si showLabel es true */}
+      {showLabel && <p>{label}</p>}
     </Link>
   );
 }

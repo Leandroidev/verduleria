@@ -1,0 +1,16 @@
+/* Estilos del contenedor del logo */
+.logoContainer {
+    width: 100%; /* El contenedor toma el ancho completo de la celda del grid */
+    height: 100%; /* El contenedor toma el alto completo de la celda del grid */
+    display: flex; /* Centramos la imagen dentro del contenedor */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+  }
+  
+  /* Estilos de la imagen */
+  .logo {
+    width: 100% ; /* El contenedor toma el ancho completo de la celda del grid */
+    height: 100% ;/* Asegura que la imagen mantenga su proporción */
+    object-fit: contain; /* Asegura que la imagen mantenga su proporción */
+
+  }
