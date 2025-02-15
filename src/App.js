@@ -1,14 +1,18 @@
 import { BrowserRouter, Route, Routes,Navigate } from "react-router-dom";
-import NavBar from "./components/navbar/NavBar.jsx";
-import Footer from "./components/Footer/Footer.jsx";
+import Layout from "./components/Layout/Layout.jsx";
 import './App.css'
 function App() {
   
   return (
     <BrowserRouter>
-    <NavBar/>
-    {/* Aca iria un div con la  */}
-    <Footer/>
+      <Layout>
+        <Routes>
+          <Route path="/Nosotros" element={<h2>Home</h2> } />
+          <Route path="/Productos" element={<h2>products</h2> } />
+          <Route path="/Carrito" element={<h2>cart</h2> } />
+          
+        </Routes>
+      </Layout>
 
     </BrowserRouter>
   );

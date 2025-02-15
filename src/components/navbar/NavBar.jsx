@@ -22,7 +22,7 @@ function NavBar() {
 
       {/* Enlace Productos */}
       <NavBarLink
-        to="/products"
+        to="/Productos"
         icon={
           <ProductsIcon/>
         }
@@ -31,7 +31,7 @@ function NavBar() {
 
       {/* Enlace Carrito */}
       <NavBarLink
-        to="/cart"
+        to="/Carrito"
         icon={
           <CartIcon/>
         }
