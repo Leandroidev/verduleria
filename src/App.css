@@ -3,13 +3,11 @@
   padding: 0;
 }
 :root {
-  --icon-size-sm: 4vw; /* Tamaño base de los íconos */
-  --font-size-sm: 1rem; /* Tamaño base del texto */
+  --icon-size-sm: 7vw; /* Tamaño base de los íconos */
+  --font-size-sm: 0.8rem; /* Tamaño base del texto */
   --spacing: 0.5rem; /* Espaciado base */
-  --icon-size-md: 5vw; /* Aumenta el tamaño de los íconos */
-  --font-size-md: 1.4rem; /* Aumenta el tamaño del texto */
-  --icon-size-lg: 6vw; /* Aumenta aún más el tamaño de los íconos */
-  --font-size-lg: 1.6rem; /* Aumenta aún más el tamaño del texto */
+  --icon-size-md: 3vw; /* Aumenta el tamaño de los íconos */
+  --font-size-md: 1.2rem; /* Aumenta el tamaño del texto */
   --primary-green: rgb(81, 163, 77);
   --primary-orange: rgb(240, 99, 39);
   --light-green: rgb(168, 212, 164);

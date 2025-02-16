@@ -9,12 +9,14 @@
     padding: var(--spacing); /* Espaciado interno */
     font-weight: bold;
     letter-spacing:2px;
+    font-size: var(--font-size-sm);
+
 }
 
 /* Ícono del enlace */
 .navBarIcon {
-    width: 30px; /* Ancho fijo para los íconos */
-    height: 30px; /* Altura fija para los íconos */
+    width:var(--icon-size-sm); /* Ancho fijo para los íconos */
+    height:var(--icon-size-sm); /* Altura fija para los íconos */
 
 }
 
@@ -25,4 +27,22 @@
 }
 .navBarLink.active p {
   background-color: white; /* Asegura que el texto también cambie de color */
+}
+@media (min-width: 768px) {
+  .navBarLink {
+    font-size: var(--font-size-md);
+  }
+  .navBarIcon{
+    width: var(--icon-size-md);
+    height:var(--icon-size-md) ;
+  }
+}
+@media (min-width: 1024px) {
+  .navBarLink {
+    font-size: var(--font-size-md);
+  }
+  .navBarIcon{
+    width: var(--icon-size-md);
+    height:var(--icon-size-md) ;
+  }
 }

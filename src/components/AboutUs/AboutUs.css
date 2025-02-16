@@ -1,0 +1,19 @@
+.aboutUs{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnas */
+    grid-template-rows: auto auto auto; /* 3 filas */
+    gap: 1rem; /* Espaciado entre los elementos */
+}
+.aboutUs-banner>img{
+    width: 100% ; /* El contenedor toma el ancho completo de la celda del grid */
+    height: 100% ;/* Asegura que la imagen mantenga su proporción */
+    object-fit: contain; /* Asegura que la imagen mantenga su proporción */  
+}
+  
+.aboutUs-banner { 
+    grid-column: span 2; /* Ocupa 2 columnas */
+}
+.aboutUs-article,
+.aboutUs-image {
+    grid-column: span 1; /* Ocupa 1 columna */
+}

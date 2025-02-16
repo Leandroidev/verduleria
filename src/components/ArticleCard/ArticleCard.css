@@ -1,0 +1,10 @@
+.aboutUs-article>p{
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: var(--font-size-sm);
+}
+.aboutUs-article{
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
