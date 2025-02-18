@@ -2,9 +2,27 @@
     text-align: center;
     letter-spacing: 1px;
     font-size: var(--font-size-sm);
+    font-weight: bold;
+    max-width: 70%;
 }
 .aboutUs-article{
+    border-radius: 16px;
+
+    border: 1px solid rgb(212, 212, 212);
+    -webkit-box-shadow: 10px 10px 5px 4px rgba(0,0,0,0.13);
+    -moz-box-shadow: 10px 10px 5px 4px rgba(0,0,0,0.13);
+    box-shadow: 10px 10px 5px 4px rgba(0,0,0,0.13);
     display: flex;
     align-items: center;
     justify-content: center;   
+    grid-column: span 1; /* Ocupa 1 columna */
 }
+
+@media (min-width: 768px) {
+
+    .aboutUs-article>p{
+        text-align: center;
+        letter-spacing: 1px;
+        font-size: var(--font-size-md);
+    }
+  }

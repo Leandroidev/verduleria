@@ -6,8 +6,14 @@
     
 }
 .aboutUs-image{
+  -webkit-box-shadow: 10px 10px 5px 4px rgba(0,0,0,0.13);
+  -moz-box-shadow: 10px 10px 5px 4px rgba(0,0,0,0.13);
+  box-shadow: 10px 10px 5px 4px rgba(0,0,0,0.13);
+  border-radius: 16px;
+
   display: flex;
   align-self: center;
   justify-content: center;
   height: 373px;
+  grid-column: span 1; /* Ocupa 1 columna */
 }
