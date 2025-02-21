@@ -1,7 +1,12 @@
-import React from 'react';
-import './Footer.css';
-import FooterLink from './FooterLink';
-import { WhatsappIcon, InstagramIcon, FacebookIcon, PhoneIcon } from '../Icons/Icons';
+import React from "react";
+import "./Footer.css";
+import FooterLink from "./FooterLink";
+import {
+  WhatsappIcon,
+  InstagramIcon,
+  FacebookIcon,
+  PhoneIcon,
+} from "../Icons/Icons";
 
 function Footer() {
   return (
@@ -21,11 +26,7 @@ function Footer() {
         icon={FacebookIcon}
         label="Seguinos en Facebook"
       />
-      <FooterLink
-        href="tel:+541145439376"
-        icon={PhoneIcon}
-        label="Llámanos"
-      />
+      <FooterLink href="tel:+541145439376" icon={PhoneIcon} label="Llámanos" />
     </div>
   );
 }

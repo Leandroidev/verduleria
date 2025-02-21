@@ -1,7 +1,7 @@
 /* Estilos del contenedor principal */
 .navBar {
-  position: sticky ; /* Cambiamos de sticky a fixed */
-  top:0;
+  position: sticky; /* Cambiamos de sticky a fixed */
+  top: 0;
   right: 0;
   display: grid; /* Usamos grid para organizar los elementos */
   grid-template-columns: 2fr 2fr 2fr 1fr; /* 4 columnas iguales */
@@ -10,8 +10,6 @@
   background-color: var(--light-green);
 }
 
-.container{
+.container {
   min-height: 1000vh;
-
 }
-  

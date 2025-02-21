@@ -1,10 +1,10 @@
-import React from 'react';
-import './ArticleCard.css';
+import React from "react";
+import "./ArticleCard.css";
 
 function ArticleCard({ text }) {
   return (
     <article className="aboutUs-article">
-                <p>{text}</p>
+      <p>{text}</p>
     </article>
   );
 }

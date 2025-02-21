@@ -1,16 +1,13 @@
-.home{
-    display: grid;
-    grid-template-columns: 1fr 1fr ; /* 2 columnas */
-    grid-template-rows: auto auto auto; /* 3 filas */
-    gap: 1rem; /* Espaciado entre los elementos */
+.home {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columnas */
+  grid-template-rows: auto auto auto; /* 3 filas */
+  gap: 1rem; /* Espaciado entre los elementos */
 }
 
-
-
 @media (min-width: 768px) {
-    .home{
-        justify-self: center;
-        max-width: 70%;
-    }
-
+  .home {
+    justify-self: center;
+    max-width: 70%;
   }
+}

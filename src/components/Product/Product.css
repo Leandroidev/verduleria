@@ -1,0 +1,28 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border: 1px solid var(--primary-green);
+  padding: 1rem;
+}
+.product img {
+  border-radius: 4px;
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: block;
+  object-fit: cover;
+  background-color: white;
+}
+.productName {
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos (...) al texto truncado */
+  overflow: hidden;
+  max-width: 140px; /* Ancho máximo del contenedor (ajústalo según tus necesidades) */
+}
+.productName strong {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}

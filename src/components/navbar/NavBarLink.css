@@ -1,23 +1,21 @@
 .navBarLink {
-    display: flex; /* Hacemos que el enlace sea flexible */
-    flex-direction: column; /* Apilamos el ícono y el texto verticalmente */
-    align-items: center; /* Centramos el contenido horizontalmente */
-    text-decoration: none; /* Quitamos el subrayado del enlace */
-    color: white; /* Color del texto */
-    text-align: center; /* Alineamos el texto al centro */
-    justify-content: center;
-    padding: var(--spacing); /* Espaciado interno */
-    font-weight: bold;
-    letter-spacing:2px;
-    font-size: var(--font-size-sm);
-
+  display: flex; /* Hacemos que el enlace sea flexible */
+  flex-direction: column; /* Apilamos el ícono y el texto verticalmente */
+  align-items: center; /* Centramos el contenido horizontalmente */
+  text-decoration: none; /* Quitamos el subrayado del enlace */
+  color: white; /* Color del texto */
+  text-align: center; /* Alineamos el texto al centro */
+  justify-content: center;
+  padding: var(--spacing); /* Espaciado interno */
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: var(--font-size-sm);
 }
 
 /* Ícono del enlace */
 .navBarIcon {
-    width:var(--icon-size-sm); /* Ancho fijo para los íconos */
-    height:var(--icon-size-sm); /* Altura fija para los íconos */
-
+  width: var(--icon-size-sm); /* Ancho fijo para los íconos */
+  height: var(--icon-size-sm); /* Altura fija para los íconos */
 }
 
 /* Estado activo del enlace */
@@ -32,17 +30,17 @@
   .navBarLink {
     font-size: var(--font-size-md);
   }
-  .navBarIcon{
+  .navBarIcon {
     width: var(--icon-size-md);
-    height:var(--icon-size-md) ;
+    height: var(--icon-size-md);
   }
 }
 @media (min-width: 1024px) {
   .navBarLink {
     font-size: var(--font-size-md);
   }
-  .navBarIcon{
+  .navBarIcon {
     width: var(--icon-size-md);
-    height:var(--icon-size-md) ;
+    height: var(--icon-size-md);
   }
 }

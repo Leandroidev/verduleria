@@ -1,5 +1,5 @@
-import React from 'react';
-import './ImageCard.css';
+import React from "react";
+import "./ImageCard.css";
 
 function ImageCard({ src, alt }) {
   return (

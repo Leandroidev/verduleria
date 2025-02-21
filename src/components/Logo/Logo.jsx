@@ -1,6 +1,6 @@
-import React from 'react';
-import './Logo.css';
-import brand from './BrandLogo.png';
+import React from "react";
+import "./Logo.css";
+import brand from "./BrandLogo.png";
 
 const Logo = () => {
   return (

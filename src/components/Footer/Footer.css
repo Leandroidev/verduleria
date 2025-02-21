@@ -1,13 +1,12 @@
 .footer {
-    border-top: 1px solid rgba(0, 0, 0, 0.16);
-    position: fixed ; /* Cambiamos de sticky a fixed */
-    bottom:0;
-    display: grid; /* Usamos grid para organizar los elementos */
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
-    gap: var(--spacing); /* Espacio entre los elementos */
-    align-items: center; /* Alinea verticalmente los elementos */
-    justify-content: center; /* Centra horizontalmente los elementos */
-    width: 100%;
-    background-color: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
+  position: fixed; /* Cambiamos de sticky a fixed */
+  bottom: 0;
+  display: grid; /* Usamos grid para organizar los elementos */
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+  gap: var(--spacing); /* Espacio entre los elementos */
+  align-items: center; /* Alinea verticalmente los elementos */
+  justify-content: center; /* Centra horizontalmente los elementos */
+  width: 100%;
+  background-color: white;
 }
-
