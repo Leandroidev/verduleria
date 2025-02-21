@@ -1,20 +1,20 @@
 .aboutUs-article>p{
     text-align: center;
     letter-spacing: 1px;
-    font-size: var(--font-size-sm);
     font-weight: bold;
-    max-width: 70%;
+    font-size: 0.7rem;
+    padding-left: 20px;
+    padding-right: 20px;
+
 }
 .aboutUs-article{
     border-radius: 16px;
-
     border: 1px solid rgb(212, 212, 212);
     -webkit-box-shadow: 10px 10px 5px 4px rgba(0,0,0,0.13);
     -moz-box-shadow: 10px 10px 5px 4px rgba(0,0,0,0.13);
     box-shadow: 10px 10px 5px 4px rgba(0,0,0,0.13);
     display: flex;
     align-items: center;
-    justify-content: center;   
     grid-column: span 1; /* Ocupa 1 columna */
 }
 
@@ -23,6 +23,7 @@
     .aboutUs-article>p{
         text-align: center;
         letter-spacing: 1px;
-        font-size: var(--font-size-md);
+        font-size: var(--font-size-lg);
+
     }
   }

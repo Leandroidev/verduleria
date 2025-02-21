@@ -4,7 +4,10 @@
 }
 :root {
   --icon-size-sm: 7vw; /* Tamaño base de los íconos */
-  --font-size-sm: 0.8rem; /* Tamaño base del texto */
+  --font-size-sm: 0.7rem; /* Tamaño base del texto */
+
+  --font-size-lg: 1.5rem; /* Tamaño base del texto */
+
   --spacing: 0.5rem; /* Espaciado base */
   --icon-size-md: 3vw; /* Aumenta el tamaño de los íconos */
   --font-size-md: 1.2rem; /* Aumenta el tamaño del texto */

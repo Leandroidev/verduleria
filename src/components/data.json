@@ -1,0 +1,222 @@
+[
+    {
+      "id": 1,
+      "name": "Manzana Roja",
+      "price": 2500,
+      "weight": 500,
+      "category": "frutas",
+      "available": true,
+      "promoPrice": 2000,
+      "discountPercentage": 20,
+      "img": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 2,
+      "name": "Espinaca Fresca",
+      "price": 1800,
+      "weight": 300,
+      "category": "verduras",
+      "available": false,
+      "promoPrice": null,
+      "discountPercentage": null,
+      "img": ""
+    },
+    {
+      "id": 3,
+      "name": "Lata de Atún",
+      "price": 4000,
+      "weight": 200,
+      "category": "envasados",
+      "available": true,
+      "promoPrice": 3500,
+      "discountPercentage": 12.5,
+      "img": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 4,
+      "name": "Caja de Galletas",
+      "price": 6000,
+      "weight": 1000,
+      "category": "mayorista",
+      "available": true,
+      "promoPrice": 5000,
+      "discountPercentage": 16.7,
+      "img": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 5,
+      "name": "Plátano Maduro",
+      "price": 1200,
+      "weight": 400,
+      "category": "frutas",
+      "available": true,
+      "promoPrice": 1000,
+      "discountPercentage": 16.7,
+      "img": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 6,
+      "name": "Zanahoria Orgánica",
+      "price": 1500,
+      "weight": 250,
+      "category": "verduras",
+      "available": true,
+      "promoPrice": null,
+      "discountPercentage": null,
+      "img": ""
+    },
+    {
+      "id": 7,
+      "name": "Salsa de Tomate",
+      "price": 3200,
+      "weight": 500,
+      "category": "envasados",
+      "available": false,
+      "promoPrice": null,
+      "discountPercentage": null,
+      "img": ""
+    },
+    {
+      "id": 8,
+      "name": "Pack de Papas Fritas",
+      "price": 8000,
+      "weight": 2000,
+      "category": "mayorista",
+      "available": true,
+      "promoPrice": 7000,
+      "discountPercentage": 12.5,
+      "img": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 9,
+      "name": "Uvas Verdes",
+      "price": 3000,
+      "weight": 600,
+      "category": "frutas",
+      "available": true,
+      "promoPrice": 2500,
+      "discountPercentage": 16.7,
+      "img": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 10,
+      "name": "Brócoli Fresco",
+      "price": 2200,
+      "weight": 400,
+      "category": "verduras",
+      "available": true,
+      "promoPrice": null,
+      "discountPercentage": null,
+      "img": ""
+    },
+    {
+      "id": 11,
+      "name": "Aceite de Oliva",
+      "price": 9000,
+      "weight": 1000,
+      "category": "envasados",
+      "available": true,
+      "promoPrice": 8000,
+      "discountPercentage": 11.1,
+      "img": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 12,
+      "name": "Caja de Arroz",
+      "price": 12000,
+      "weight": 5000,
+      "category": "mayorista",
+      "available": false,
+      "promoPrice": null,
+      "discountPercentage": null,
+      "img": ""
+    },
+    {
+      "id": 13,
+      "name": "Naranja Jugosa",
+      "price": 1800,
+      "weight": 350,
+      "category": "frutas",
+      "available": true,
+      "promoPrice": 1500,
+      "discountPercentage": 16.7,
+      "img": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 14,
+      "name": "Lechuga Crespa",
+      "price": 1000,
+      "weight": 200,
+      "category": "verduras",
+      "available": true,
+      "promoPrice": null,
+      "discountPercentage": null,
+      "img": ""
+    },
+    {
+      "id": 15,
+      "name": "Mayonesa Clásica",
+      "price": 2800,
+      "weight": 400,
+      "category": "envasados",
+      "available": true,
+      "promoPrice": 2500,
+      "discountPercentage": 10.7,
+      "img": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 16,
+      "name": "Caja de Gaseosas",
+      "price": 15000,
+      "weight": 6000,
+      "category": "mayorista",
+      "available": true,
+      "promoPrice": 13000,
+      "discountPercentage": 13.3,
+      "img": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 17,
+      "name": "Piña Dulce",
+      "price": 4500,
+      "weight": 1200,
+      "category": "frutas",
+      "available": false,
+      "promoPrice": null,
+      "discountPercentage": null,
+      "img": ""
+    },
+    {
+      "id": 18,
+      "name": "Pimiento Rojo",
+      "price": 2000,
+      "weight": 300,
+      "category": "verduras",
+      "available": true,
+      "promoPrice": 1800,
+      "discountPercentage": 10,
+      "img": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 19,
+      "name": "Sopa Instantánea",
+      "price": 1500,
+      "weight": 100,
+      "category": "envasados",
+      "available": true,
+      "promoPrice": null,
+      "discountPercentage": null,
+      "img": ""
+    },
+    {
+      "id": 20,
+      "name": "Caja de Harina",
+      "price": 10000,
+      "weight": 4000,
+      "category": "mayorista",
+      "available": true,
+      "promoPrice": 9000,
+      "discountPercentage": 10,
+      "img": "https://via.placeholder.com/150"
+    }
+  ]

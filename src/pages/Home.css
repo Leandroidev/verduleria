@@ -1,4 +1,4 @@
-.aboutUs{
+.home{
     display: grid;
     grid-template-columns: 1fr 1fr ; /* 2 columnas */
     grid-template-rows: auto auto auto; /* 3 filas */
@@ -8,7 +8,7 @@
 
 
 @media (min-width: 768px) {
-    .aboutUs{
+    .home{
         justify-self: center;
         max-width: 70%;
     }
