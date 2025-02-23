@@ -33,6 +33,7 @@
 .discountText {
   color: var(--primary-green);
   font-weight: bold;
+  text-align: start;
 }
 .productPanel {
   border-radius: 25px;
@@ -43,7 +44,11 @@
 .productPanel > button {
   border: none;
   background-color: transparent;
+  font-weight: bold;
+  font-size: var(--font-size-lg);
+  color: var(--primary-green);
 }
+
 .productPanel > span {
   border-right: 1px solid var(--primary-green);
   border-left: 1px solid var(--primary-green);
@@ -51,4 +56,9 @@
 }
 .productPriceWODiscount {
   grid-row-start: 2;
+}
+.weightText {
+  color: grey;
+  font-weight: normal;
+  align-items: center;
 }

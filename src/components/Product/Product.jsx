@@ -17,10 +17,14 @@ function Product({ product }) {
               {Math.trunc(product.discountPercentage)}% OFF
             </small>
             <strong>${product.promoPrice} </strong>{" "}
+            <small className="weightText"> x{product.weight} grs</small>
           </>
         ) : (
           <>
-            <strong className="productPriceWODiscount">${product.price}</strong>
+            <strong className="productPriceWODiscount">
+              ${product.price}
+              <small className="weightText"> x{product.weight} grs</small>
+            </strong>
           </>
         )}
       </div>
