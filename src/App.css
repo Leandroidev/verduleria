@@ -3,21 +3,23 @@
   padding: 0;
 }
 :root {
-  --icon-size-sm: 7vw; /* Tamaño base de los íconos */
-  --font-size-sm: 0.7rem; /* Tamaño base del texto */
-
-  --font-size-lg: 1.5rem; /* Tamaño base del texto */
-
   --spacing: 0.5rem; /* Espaciado base */
-  --icon-size-md: 3vw; /* Aumenta el tamaño de los íconos */
-  --font-size-md: 1.2rem; /* Aumenta el tamaño del texto */
+
+  --icon-size-sm: 1rem; /* Tamaño base de los íconos */
+  --font-size-sm: 0.7rem; /* Tamaño base del texto */
+  --logo-size-sm: calc(
+    var(--icon-size-sm) + var(--font-size-sm)
+  ); /* Aumenta el tamaño de los íconos */
+  --icon-size-md: 1.5rem; /* Aumenta el tamaño de los íconos */
+  --font-size-md: 1rem; /* Aumenta el tamaño del texto */
+
+  --icon-size-lg: 1.5rem; /* Aumenta el tamaño de los íconos */
+  --font-size-lg: 1rem; /* Aumenta el tamaño del texto */
+  --logo-size-lg: calc(var(--icon-size-lg) + var(--font-size-lg));
+
   --primary-green: rgb(81, 163, 77);
   --primary-orange: rgb(240, 99, 39);
   --light-green: rgb(168, 212, 164);
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
   --breakpoint-sm: 480px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;

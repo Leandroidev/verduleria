@@ -37,10 +37,10 @@
 }
 @media (min-width: 1024px) {
   .navBarLink {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-lg);
   }
   .navBarIcon {
-    width: var(--icon-size-md);
-    height: var(--icon-size-md);
+    width: var(--icon-size-lg);
+    height: var(--icon-size-lg);
   }
 }

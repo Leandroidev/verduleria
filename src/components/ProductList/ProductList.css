@@ -1,5 +1,26 @@
-.productListContainer ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 0.5rem;
+@media (max-width: 768px) {
+  .productListContainer ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .productListContainer ul {
+    display: grid;
+    grid-template-columns: repeat(3, 240px);
+    gap: 0.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .productListContainer {
+    justify-self: center;
+    font-size: 1rem;
+  }
+  .productListContainer ul {
+    display: grid;
+    grid-template-columns: repeat(4, 240px);
+    gap: 0.5rem;
+  }
 }

@@ -9,11 +9,23 @@
   padding: var(--spacing); /* Espaciado interno */
 }
 .footerIcon {
-  width: 30px; /* Ancho fijo para los íconos */
-  height: 30px; /* Altura fija para los íconos */
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
 }
 .footerIcon > svg {
   display: flex;
   max-width: 100%;
   max-height: 100%;
+}
+@media (min-width: 768px) {
+  .footerIcon {
+    width: var(--icon-size-md);
+    height: var(--icon-size-md);
+  }
+}
+@media (min-width: 1024px) {
+  .footerIcon {
+    width: var(--icon-size-lg);
+    height: var(--icon-size-lg);
+  }
 }

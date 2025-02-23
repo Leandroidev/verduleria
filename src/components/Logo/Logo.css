@@ -9,7 +9,22 @@
 
 /* Estilos de la imagen */
 .logo {
-  width: 100%; /* El contenedor toma el ancho completo de la celda del grid */
-  height: 100%; /* Asegura que la imagen mantenga su proporción */
+  width: var(
+    --logo-size-sm
+  ); /* El contenedor toma el ancho completo de la celda del grid */
+  height: var(
+    --logo-size-sm
+  ); /* Asegura que la imagen mantenga su proporción */
   object-fit: contain; /* Asegura que la imagen mantenga su proporción */
+}
+@media (min-width: 768px) {
+  .logo {
+    width: var(
+      --logo-size-lg
+    ); /* El contenedor toma el ancho completo de la celda del grid */
+    height: var(
+      --logo-size-lg
+    ); /* Asegura que la imagen mantenga su proporción */
+    object-fit: contain; /* Asegura que la imagen mantenga su proporción */
+  }
 }

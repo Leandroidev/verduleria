@@ -2,9 +2,9 @@ import React from "react";
 import "./Product.css";
 function Product({ product }) {
   return (
-    <li className="product" key={product.id}>
+    <li className="product">
       <div>
-        <img src={product.img} alt={product.name}></img>
+        <img src={product.img || null} alt={product.name}></img>
       </div>
       <div className="productName">
         <strong>{product.name}</strong>
@@ -13,17 +13,21 @@ function Product({ product }) {
         {product.promoPrice ? (
           <>
             <del>${product.price}</del>
-            <br />
-            <strong>${product.promoPrice}</strong>
+            <small className="discountText">
+              {Math.trunc(product.discountPercentage)}% OFF
+            </small>
+            <strong>${product.promoPrice} </strong>{" "}
           </>
         ) : (
-          <strong>${product.price}</strong>
+          <>
+            <strong className="productPriceWODiscount">${product.price}</strong>
+          </>
         )}
       </div>
-      <div>
-        <button>+</button>
-        <span>0</span>
+      <div className="productPanel">
         <button>-</button>
+        <span>0</span>
+        <button>+</button>
       </div>
     </li>
   );

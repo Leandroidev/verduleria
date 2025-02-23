@@ -118,7 +118,7 @@
       "available": true,
       "promoPrice": 8000,
       "discountPercentage": 11.1,
-      "img": "https://via.placeholder.com/150"
+      "img": ""
     },
     {
       "id": 12,
@@ -140,7 +140,7 @@
       "available": true,
       "promoPrice": 1500,
       "discountPercentage": 16.7,
-      "img": "https://via.placeholder.com/150"
+      "img": ""
     },
     {
       "id": 14,
@@ -162,7 +162,7 @@
       "available": true,
       "promoPrice": 2500,
       "discountPercentage": 10.7,
-      "img": "https://via.placeholder.com/150"
+      "img": ""
     },
     {
       "id": 16,
@@ -173,7 +173,7 @@
       "available": true,
       "promoPrice": 13000,
       "discountPercentage": 13.3,
-      "img": "https://via.placeholder.com/150"
+      "img": ""
     },
     {
       "id": 17,
@@ -195,7 +195,7 @@
       "available": true,
       "promoPrice": 1800,
       "discountPercentage": 10,
-      "img": "https://via.placeholder.com/150"
+      "img": ""
     },
     {
       "id": 19,
@@ -217,6 +217,6 @@
       "available": true,
       "promoPrice": 9000,
       "discountPercentage": 10,
-      "img": "https://via.placeholder.com/150"
+      "img": ""
     }
   ]
