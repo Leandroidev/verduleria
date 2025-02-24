@@ -4,8 +4,8 @@ export const FiltersContext = createContext();
 
 export function FiltersProvider({ children }) {
   const [filters, setFilters] = useState({
-    category: "all",
-    input: "",
+    category: "todos",
+    searchTerm: "",
   });
   return (
     <FiltersContext.Provider

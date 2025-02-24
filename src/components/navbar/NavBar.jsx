@@ -2,10 +2,6 @@ import React from "react";
 import NavBarLink from "./NavBarLink";
 import Logo from "../Logo/Logo";
 import "./NavBar.css";
-
-//import CartCounter from './CartCounter';
-//import { useCart } from '../../context/CartContext';
-//<CartCounter totalProductos={totalProductos} />
 import { HomeIcon, CartIcon, ProductsIcon } from "../Icons/Icons.jsx";
 function NavBar() {
   return (

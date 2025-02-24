@@ -6,7 +6,12 @@ export function useFilters() {
   const filteredProducts = (products) => {
     return products.filter((product) => {
       return (
-        filters.category === "all" || product.category === filters.category
+        (filters.category === "todos" &&
+          product.name
+            .toLowerCase()
+            .includes(filters.searchTerm.toLowerCase())) ||
+        (product.category === filters.category &&
+          product.name.toLowerCase().includes(filters.searchTerm.toLowerCase()))
       );
     });
   };

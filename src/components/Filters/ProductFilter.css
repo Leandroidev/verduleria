@@ -1,0 +1,33 @@
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-sm);
+  gap: var(--spacing);
+  padding: var(--spacing);
+  align-items: center;
+}
+
+.categoryNavbar {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  border-bottom: 1px solid #dce8ce;
+}
+.tab {
+  padding-bottom: var(--spacing);
+  color: var(--primary-orange);
+  border-bottom: 3px solid transparent;
+}
+
+.tab.active {
+  border-bottom-color: var(--primary-green);
+  color: var(--primary-green);
+}
+
+.search-bar input {
+  padding: var(--spacing);
+  font-size: var(--font-size-sm);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

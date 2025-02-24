@@ -1,10 +1,10 @@
 import { useFilters } from "../../hooks/useFilters";
 import React from "react";
-
+import "./ProductFilter.css";
 function ProductFilter() {
   const { filters, setFilters } = useFilters();
 
-  const categories = ["Todos", "verduras", "frutas", "mayorista", "envasados"];
+  const categories = ["todos", "verduras", "frutas", "mayorista", "envasados"];
   const handleChangeCategory = (category) => {
     console.log(category);
     setFilters((prevFilters) => ({
@@ -24,10 +24,14 @@ function ProductFilter() {
   };
 
   return (
-    <div className="filter-container">
-      <div className="nav-tabs">
+    <div className="filterContainer">
+      <div className="categoryNavbar">
         {categories.map((category) => (
-          <a key={category} onClick={() => handleChangeCategory(category)}>
+          <a
+            className={`tab ${filters.category === category ? "active" : ""}`}
+            key={category}
+            onClick={() => handleChangeCategory(category)}
+          >
             {category.charAt(0).toUpperCase() + category.slice(1)}
           </a>
         ))}
@@ -37,7 +41,7 @@ function ProductFilter() {
       <div className="search-bar">
         <input
           type="text"
-          placeholder="Buscar por nombre..."
+          placeholder="Buscar un producto..."
           onChange={handleChangeSearchTerm}
         />
       </div>
