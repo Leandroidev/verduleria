@@ -1,0 +1,8 @@
+.cartListContainer ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  margin-bottom: calc(
+    10px + var(--icon-size-sm) + var(--spacing) + var(--spacing)
+  );
+}

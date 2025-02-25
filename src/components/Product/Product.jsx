@@ -1,6 +1,17 @@
 import React from "react";
 import "./Product.css";
-function Product({ product }) {
+function Product({
+  product,
+  incrementProductQuantity,
+  cart,
+  decrementProductQuantity,
+}) {
+  let productInCartQuantity = 0;
+  let productInCartIndex = cart.findIndex((item) => item.id === product.id);
+  if (productInCartIndex >= 0) {
+    productInCartQuantity = cart[productInCartIndex].quantity;
+  }
+
   return (
     <li className="product">
       <div>
@@ -29,9 +40,9 @@ function Product({ product }) {
         )}
       </div>
       <div className="productPanel">
-        <button>-</button>
-        <span>0</span>
-        <button>+</button>
+        <button onClick={() => decrementProductQuantity(product)}>-</button>
+        <span>{productInCartQuantity} </span>
+        <button onClick={() => incrementProductQuantity(product)}>+</button>
       </div>
     </li>
   );

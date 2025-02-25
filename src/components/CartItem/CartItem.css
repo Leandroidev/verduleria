@@ -1,0 +1,58 @@
+.cartItem {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border: 1px dotted var(--primary-green);
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.cartItem img {
+  border-radius: 4px;
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: block;
+  object-fit: cover;
+  background-color: white;
+  border: 1px solid var(--primary-green);
+}
+.cartItemName {
+  text-align: left;
+  overflow: hidden;
+}
+.deleteProductCart,
+.cartItemPrice,
+.cartItemQuantity {
+  justify-self: center;
+  align-self: center;
+}
+.cartCheckout {
+  position: sticky;
+  bottom: calc(10px + var(--icon-size-sm) + var(--spacing) + var(--spacing));
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: var(--light-green);
+  font-size: var(--font-size-sm);
+  padding: 10px;
+  border-radius: 20px;
+}
+.cartCheckout > div {
+  flex: 2;
+  text-align: center;
+}
+.cartCheckout > button {
+  flex: 1;
+  color: white;
+  margin: 5px;
+  padding: 5px;
+  background-color: var(--primary-green);
+  border: none;
+  border-radius: 20px;
+  width: 100%;
+  border: 1px solid var(--primary-green);
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+}
