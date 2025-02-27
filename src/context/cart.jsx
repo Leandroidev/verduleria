@@ -41,8 +41,6 @@ export function CartProvider({ children }) {
     const productInCartIndex = cart.findIndex((item) => item.id === product.id);
     if (productInCartIndex >= 0) {
       const newCart = cart.filter((item) => item.id !== product.id);
-      console.log(newCart);
-
       return setCart(newCart);
     }
     return "No se pudo eliminar el producto";

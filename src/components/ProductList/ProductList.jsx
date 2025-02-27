@@ -7,8 +7,6 @@ function ProductList({
   incrementProductQuantity,
   decrementProductQuantity,
 }) {
-  console.log(cart);
-
   return (
     <main className="productListContainer">
       <ul>
