@@ -31,7 +31,9 @@ function CartCheckOut({ cart }) {
     if (totalWeight < 1000) {
       return `${totalWeight.toFixed(0)} g`; // Display in grams if less than 1 kg
     } else {
-      return `${(totalWeight / 1000).toFixed(2)} kg`; // Convert to kg if 1 kg or more
+      return Number.isInteger(totalWeight / 1000)
+        ? `${Math.floor(totalWeight / 1000)} kg`
+        : `${(totalWeight / 1000).toFixed(1)} kg`;
     }
   };
 

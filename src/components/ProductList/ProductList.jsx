@@ -1,23 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ProductList.css";
 import Product from "../Product/Product";
-function ProductList({
-  products,
-  cart,
-  incrementProductQuantity,
-  decrementProductQuantity,
-}) {
+import { useFilters } from "../../hooks/useFilters";
+import initialProducts from "../../components/data.json";
+
+function ProductList() {
+  const { filteredProducts } = useFilters();
+  const [products] = useState(initialProducts);
+
+  const filtered = filteredProducts(products);
+
   return (
     <main className="productListContainer">
       <ul>
-        {products.map((product) => (
-          <Product
-            product={product}
-            key={product.id}
-            incrementProductQuantity={incrementProductQuantity}
-            decrementProductQuantity={decrementProductQuantity}
-            cart={cart}
-          />
+        {filtered.map((product) => (
+          <Product product={product} key={product.id} />
         ))}
       </ul>
     </main>

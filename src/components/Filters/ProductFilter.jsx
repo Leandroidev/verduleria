@@ -3,8 +3,8 @@ import React from "react";
 import "./ProductFilter.css";
 function ProductFilter() {
   const { filters, setFilters } = useFilters();
-
   const categories = ["todos", "verduras", "frutas", "mayorista", "envasados"];
+
   const handleChangeCategory = (category) => {
     console.log(category);
     setFilters((prevFilters) => ({

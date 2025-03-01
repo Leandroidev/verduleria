@@ -1,4 +1,15 @@
 .content {
   padding: 10px;
   align-self: center;
+  margin-bottom: calc(var(--icon-size-sm) + var(--spacing));
+}
+@media (min-width: 768px) {
+  .content {
+    margin-bottom: calc(var(--icon-size-md) + var(--spacing));
+  }
+}
+@media (min-width: 1024px) {
+  .content {
+    margin-bottom: calc(var(--icon-size-lg) + var(--spacing));
+  }
 }
