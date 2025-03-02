@@ -9,3 +9,26 @@
   justify-content: center; /* Centra horizontalmente los elementos */
   background-color: var(--light-green);
 }
+.cartIconContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartBadge {
+  position: absolute;
+  letter-spacing: 0px;
+  top: -5px;
+  right: -8px;
+  background-color: orange;
+  color: white;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+  vertical-align: center;
+}

@@ -4,6 +4,8 @@ export const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
+  const getCartQuantity = () =>
+    state.reduce((sum, item) => sum + item.quantity, 0);
   const incrementProductQuantity = (product) =>
     dispatch({ type: "ADD_TO_CART", payload: product });
   const decrementProductQuantity = (product) =>
@@ -21,6 +23,7 @@ export function CartProvider({ children }) {
         decrementProductQuantity,
         clearCart,
         removeProduct,
+        getCartQuantity,
       }}
     >
       {children}
