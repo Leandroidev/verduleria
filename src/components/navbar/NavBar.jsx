@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import NavBarLink from "./NavBarLink";
 import Logo from "../Logo/Logo";
-import { useState } from "react";
 import "./NavBar.css";
 import { HomeIcon, CartIcon, ProductsIcon } from "../Icons/Icons.jsx";
 import { useCart } from "../../hooks/useCart.jsx";

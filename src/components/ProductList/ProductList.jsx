@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./ProductList.css";
-import Product from "../Product/Product";
+import Product from "../ProductAdmin/ProductAdmin";
 import { useFilters } from "../../hooks/useFilters";
-import initialProducts from "../../components/data.json";
-
+import { ProductContext } from "../../context/products";
 function ProductList() {
   const { filteredProducts } = useFilters();
-  const [products] = useState(initialProducts);
-
+  const { products } = useContext(ProductContext);
   const filtered = filteredProducts(products);
 
   return (
