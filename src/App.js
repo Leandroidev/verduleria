@@ -4,16 +4,18 @@ import "./App.css";
 import Home from "./pages/Home.jsx";
 import ProductsPage from "./pages/ProductsPage.jsx";
 import CartPage from "./pages/CartPage.jsx";
-import LogInForm from "./components/LogIn/LogInForm.jsx";
+import LogInPage from "./pages/LogInPage.jsx";
 function App() {
   return (
     <BrowserRouter>
       <Layout>
         <Routes>
+          <Route path="/" element={<ProductsPage />} />
+
           <Route path="/Nosotros" element={<Home />} />
           <Route path="/Productos" element={<ProductsPage />} />
           <Route path="/Carrito" element={<CartPage />} />
-          <Route path="/LogIn" element={<LogInForm />} />
+          <Route path="/LogIn" element={<LogInPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>

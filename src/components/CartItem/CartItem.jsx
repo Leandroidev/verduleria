@@ -19,7 +19,11 @@ function CartItem({ cartItem, removeProduct }) {
           <small>${cartItem.price}</small>
         </div>
         <div className="deleteProductCart">
-          <button onClick={() => removeProduct(cartItem)}>
+          <button
+            onClick={() => {
+              removeProduct(cartItem);
+            }}
+          >
             <DeleteCanSvg />
           </button>
         </div>

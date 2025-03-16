@@ -17,7 +17,6 @@ export const adminLogin = async (credentials) => {
 export const userLogin = async (credentials) => {
   try {
     const response = await apiClient.post("/user/logIn", credentials);
-    console.log(response);
 
     return response.data; // Retorna el token JWT
   } catch (error) {
@@ -29,11 +28,10 @@ export const userLogin = async (credentials) => {
 export const sessionActive = async () => {
   try {
     const response = await apiClient.post("/user/sessionActive");
-
+    console.log("Respuesta del servidor:", response.data); // Agrega este log
     return response.data; // Retorna el token JWT
   } catch (error) {
-    throw new Error(
-      error.response?.data?.message || "Error al iniciar sesión como usuario"
-    );
+    console.error("Error en sessionActive:", error); // Muestra detalles del error
+    throw new Error(error.message || "Error al iniciar sesión como usuario");
   }
 };

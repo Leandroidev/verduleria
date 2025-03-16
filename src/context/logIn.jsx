@@ -39,29 +39,22 @@ export const LogInProvider = ({ children }) => {
     setUserName(null);
     setIsAuthenticated(false); // Actualizamos el estado de autenticación
   };
-
-  // Verificar la autenticación al cargar el contexto o cuando cambia el token
-  useEffect(() => {
-    const checkAuthentication = async () => {
-      if (token) {
-        try {
-          await sessionActive(); // Verificar si la sesión está activa
-          setIsAuthenticated(true); // Si la sesión es válida, actualizamos el estado
-        } catch (error) {
-          console.error("La sesión no es válida:", error.message);
-          setIsAuthenticated(false); // Si falla, limpiamos el estado de autenticación
-          setToken(null); // Limpiamos el token inválido
-          setUserName(null); // Limpiamos el nombre de usuario
-        }
-      } else {
-        setIsAuthenticated(false); // Si no hay token, asumimos que no está autenticado
+  const checkAuthentication = async () => {
+    if (token) {
+      try {
+        await sessionActive();
+        setIsAuthenticated(true);
+      } catch (error) {
+        logout();
       }
-    };
-
+    } else {
+      setIsAuthenticated(false);
+    }
+  };
+  useEffect(() => {
     checkAuthentication();
-  }, [token]); // Observamos cambios en el token
+  }, [token]);
 
-  // Valor del contexto
   const value = {
     token,
     userName,

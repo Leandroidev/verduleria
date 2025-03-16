@@ -1,20 +1,14 @@
 import React, { useState, useContext, useEffect } from "react";
 import { LogInContext } from "../../context/logIn";
 import "./LogInForm.css";
-import { useNavigate } from "react-router-dom";
+
 function LogInForm() {
-  // Estados para almacenar los valores del formulario
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-  // Accedemos al contexto de autenticación
-  const { login, error, isAuthenticated } = useContext(LogInContext);
-
-  // Función para manejar el envío del formulario
+  const { login, error } = useContext(LogInContext);
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Previene el comportamiento por defecto del formulario
+    e.preventDefault();
 
-    // Llamamos a la función de inicio de sesión del contexto
     await login({ userName, password });
   };
 
@@ -22,7 +16,6 @@ function LogInForm() {
     <div className="logInForm">
       <h1 className="logInTitle">LogIn</h1>
       <form onSubmit={handleSubmit}>
-        {/* Campo de usuario */}
         <input
           type="text"
           placeholder="username"
@@ -30,7 +23,6 @@ function LogInForm() {
           onChange={(e) => setUserName(e.target.value)}
         />
 
-        {/* Campo de contraseña */}
         <input
           type="password"
           placeholder="password"
@@ -38,10 +30,8 @@ function LogInForm() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        {/* Botón de inicio de sesión */}
         <button type="submit">Login</button>
 
-        {/* Mensaje de error */}
         {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
     </div>

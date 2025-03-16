@@ -26,9 +26,17 @@
   overflow: hidden; /* Oculta el texto que excede el límite */
   text-overflow: ellipsis; /* Agrega puntos suspensivos (...) */
 }
-.deleteProductCart,
 .cartItemPrice,
 .cartItemQuantity {
   justify-self: center;
   align-self: center;
+}
+.deleteProductCart {
+  justify-self: center;
+  align-self: center;
+}
+.deleteProductCart > button {
+  border: none;
+  background-color: transparent;
+  color: var(--primary-green) !important;
 }
