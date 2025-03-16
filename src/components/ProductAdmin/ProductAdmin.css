@@ -36,21 +36,28 @@
   font-weight: bold;
   text-align: start;
 }
-.productPanel {
-  border-radius: 25px;
-  border: 1px solid var(--primary-green);
+.productAdminPanel {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; /* 2 columnas */
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
-.productPanel > button {
+.productAdminPanel > button {
   border: none;
+  border-radius: 25px;
+  border: 1px solid var(--primary-green);
   background-color: transparent;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: var(--font-size-lg);
   color: var(--primary-green);
+  padding: 5px;
 }
 
-.productPanel > span {
+.productAdminPanel > span {
   border-right: 1px solid var(--primary-green);
   border-left: 1px solid var(--primary-green);
   text-align: center;

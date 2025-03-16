@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./ProductAdmin.css";
 import EditPopUp from "./EditPopUp";
-
+import { ProductContext } from "../../context/products";
+import {
+  EyeOpenSvg,
+  EyeClosedSvg,
+  DeleteCanSvg,
+  PencilSvg,
+} from "../Icons/Icons";
 function ProductAdmin({ product }) {
+  const { removeProduct, editProduct } = useContext(ProductContext);
   const [isEditing, setIsEditing] = useState(false);
   const displayWeight = (weight) => {
     if (weight < 1000) {
@@ -13,9 +20,18 @@ function ProductAdmin({ product }) {
         : `${(weight / 1000).toFixed(1)} kg`;
     }
   };
+  const handleAvailability = () => {
+    const newAvailability = { available: !product.available };
+    editProduct(product.id, newAvailability);
+  };
+
   return (
     <li className="product">
-      {isEditing ? <EditPopUp /> : <></>}
+      {isEditing ? (
+        <EditPopUp product={product} setIsEditing={setIsEditing} />
+      ) : (
+        <></>
+      )}
       <div>
         <img src={product.img || null} alt={product.name}></img>
       </div>
@@ -23,24 +39,53 @@ function ProductAdmin({ product }) {
         <strong>{product.name}</strong>
       </div>
       <div className="productPrice">
-        <>
-          <strong className="productPriceWODiscount">${product.price}</strong>
-          <small className="weightText">
-            {" "}
-            x{displayWeight(product.weight)}
-          </small>
-        </>
+        {product.promoPrice ? (
+          <>
+            <del>${product.price}</del>
+            <small className="discountText">
+              {Math.trunc(product.discountPercentage)}% OFF
+            </small>
+            <strong>${product.promoPrice} </strong>{" "}
+            <small className="weightText">
+              {" "}
+              x{displayWeight(product.weight)}
+            </small>
+          </>
+        ) : (
+          <>
+            <strong className="productPriceWODiscount">${product.price}</strong>
+            <small className="weightText">
+              {" "}
+              x{displayWeight(product.weight)}
+            </small>
+          </>
+        )}
       </div>
-      <div className="productPanel">
-        <button>B</button>
+      <div className="productAdminPanel">
+        {product.available ? (
+          <button onClick={handleAvailability}>
+            <EyeOpenSvg />
+          </button>
+        ) : (
+          <button onClick={handleAvailability}>
+            <EyeClosedSvg />
+          </button>
+        )}
+
         <button
           onClick={() => {
             setIsEditing(!isEditing);
           }}
         >
-          M
+          <PencilSvg />
         </button>
-        <button>D</button>
+        <button
+          onClick={() => {
+            removeProduct(product.id);
+          }}
+        >
+          <DeleteCanSvg />
+        </button>
       </div>
     </li>
   );

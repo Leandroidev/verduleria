@@ -26,3 +26,14 @@ export const userLogin = async (credentials) => {
     );
   }
 };
+export const sessionActive = async () => {
+  try {
+    const response = await apiClient.post("/user/sessionActive");
+
+    return response.data; // Retorna el token JWT
+  } catch (error) {
+    throw new Error(
+      error.response?.data?.message || "Error al iniciar sesión como usuario"
+    );
+  }
+};

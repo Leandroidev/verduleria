@@ -20,6 +20,9 @@ function Product({ product }) {
         : `${(weight / 1000).toFixed(1)} kg`;
     }
   };
+  if (!product.available) {
+    return false;
+  }
   return (
     <li className="product">
       <div>

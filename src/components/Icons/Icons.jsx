@@ -168,3 +168,50 @@ export const DeleteCanSvg = () => (
     <path d="M14 11v6"></path>
   </svg>
 );
+export const EyeOpenSvg = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 5C7 5 3.3 8.8 1.9 11.5a1 1 0 000 .9C3.3 15.2 7 19 12 19s8.7-3.8 10.1-6.5a1 1 0 000-.9C20.7 8.8 17 5 12 5zm0 12c-4.5 0-7.9-3-9.1-5C4.1 10 7.5 7 12 7s7.9 3 9.1 5c-1.2 2-4.6 5-9.1 5zm0-9a4 4 0 100 8 4 4 0 000-8zm0 6a2 2 0 110-4 2 2 0 010 4z"
+      fill="currentColor"
+    />
+  </svg>
+);
+export const EyeClosedSvg = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 4c-5 0-9 3.5-11 7.5 1.3 2.5 3.5 5.2 6.4 6.5m10.3-2.1A11 11 0 0023 11.5c-2-4-6-7.5-11-7.5-1.8 0-3.6.5-5.2 1.3M10 10a2 2 0 012-2 2 2 0 012 2m0 4a2 2 0 01-2-2m-6.7 8L21 3"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+export const PencilSvg = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    x="0px"
+    y="0px"
+    width="24"
+    height="24"
+    viewBox="0 0 48 48"
+    stroke="currentColor"
+  >
+    <path
+      d="M38.657 18.536l2.44-2.44c2.534-2.534 2.534-6.658 0-9.193-1.227-1.226-2.858-1.9-4.597-1.9s-3.371.675-4.597 1.901l-2.439 2.439L38.657 18.536zM27.343 11.464L9.274 29.533c-.385.385-.678.86-.848 1.375L5.076 41.029c-.179.538-.038 1.131.363 1.532C5.726 42.847 6.108 43 6.5 43c.158 0 .317-.025.472-.076l10.118-3.351c.517-.17.993-.463 1.378-.849l18.068-18.068L27.343 11.464z"
+      fill="currentColor"
+    />
+  </svg>
+);
