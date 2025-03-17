@@ -5,12 +5,22 @@ import Product from "../Product/Product";
 import { useFilters } from "../../hooks/useFilters";
 import { ProductContext } from "../../context/products";
 import { LogInContext } from "../../context/logIn";
+import { useNavigate } from "react-router-dom";
 function ProductList() {
+  const navigate = useNavigate();
+
   const { filteredProducts } = useFilters();
   const { products } = useContext(ProductContext);
-  const { isAuthenticated } = useContext(LogInContext); // Consumimos el estado de autenticación
+  const { isAuthenticated, userName } = useContext(LogInContext); // Consumimos el estado de autenticación
   const filtered = filteredProducts(products);
-
+  useEffect(() => {
+    if (isAuthenticated && userName != "owner") {
+      navigate("/Productos");
+    }
+    if (isAuthenticated && userName == "owner") {
+      navigate("/admin/home");
+    }
+  }, [isAuthenticated]);
   return (
     <main className="productListContainer">
       <ul>

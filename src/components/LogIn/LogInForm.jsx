@@ -3,8 +3,6 @@ import { LogInContext } from "../../context/logIn";
 import "./LogInForm.css";
 
 function LogInForm({ owner }) {
-  console.log(owner);
-
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const { login, error } = useContext(LogInContext);

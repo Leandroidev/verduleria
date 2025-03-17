@@ -6,11 +6,14 @@ function LogInPage(props) {
   const { owner } = props;
 
   const navigate = useNavigate();
-  const { isAuthenticated } = useContext(LogInContext);
+  const { isAuthenticated, userName } = useContext(LogInContext);
 
   useEffect(() => {
-    if (isAuthenticated) {
+    if (isAuthenticated && userName != "owner") {
       navigate("/Productos");
+    }
+    if (isAuthenticated && userName == "owner") {
+      navigate("/admin/home");
     }
   }, [isAuthenticated]);
   if (owner) return <LogInForm owner={owner} />;

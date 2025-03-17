@@ -1,13 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import NavBarLink from "./NavBarLink";
 import Logo from "../Logo/Logo";
 import "./NavBar.css";
-import { HomeIcon, CartIcon, ProductsIcon } from "../Icons/Icons.jsx";
+import {
+  HomeIcon,
+  CartIcon,
+  ProductsIcon,
+  LogoutIcon,
+} from "../Icons/Icons.jsx";
 import { useCart } from "../../hooks/useCart.jsx";
 import { LogInContext } from "../../context/logIn.jsx";
+
 function NavBar() {
   const { getCartQuantity } = useCart();
   const { logout, isAuthenticated } = useContext(LogInContext);
+
   return (
     <div className="navBar">
       {/* Enlace Nosotros */}
@@ -39,8 +46,9 @@ function NavBar() {
       ) : (
         <NavBarLink
           to="/Productos"
-          icon={<HomeIcon />}
+          icon={<LogoutIcon />}
           label="LogOut"
+          showActive={false}
           fn={logout}
         />
       )}

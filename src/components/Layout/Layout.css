@@ -1,7 +1,6 @@
 .content {
   padding: 10px;
-  justify-content: center;
-  align-content: center;
+
   margin-bottom: calc(var(--icon-size-sm) + var(--spacing));
 }
 @media (min-width: 768px) {

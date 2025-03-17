@@ -5,7 +5,7 @@ import Home from "./pages/Home.jsx";
 import ProductsPage from "./pages/ProductsPage.jsx";
 import CartPage from "./pages/CartPage.jsx";
 import LogInPage from "./pages/LogInPage.jsx";
-import OwnerLogInPage from "./pages/OwnerLogInPage.jsx";
+import OwnerPage from "./pages/OwnerPage.jsx";
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +18,7 @@ function App() {
           <Route path="/Carrito" element={<CartPage />} />
           <Route path="/LogIn" element={<LogInPage />} />
           <Route path="/admin/LogIn" element={<LogInPage owner={true} />} />
+          <Route path="/admin/home" element={<OwnerPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>

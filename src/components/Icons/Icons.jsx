@@ -215,3 +215,21 @@ export const PencilSvg = () => (
     />
   </svg>
 );
+export const LogoutIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="2"
+    viewBox="0 0 24 24"
+  >
+    {/* Marco de la puerta */}
+    <rect x="3" y="5" width="12" height="14" rx="1" />
+    {/* Manija de la puerta */}
+    <circle cx="8" cy="12" r="1" />
+    {/* Flecha hacia la izquierda */}
+    <path d="M17 12H7m0 0l3-3m-3 3l3 3" />
+  </svg>
+);

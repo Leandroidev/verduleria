@@ -1,0 +1,71 @@
+.adminHome {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+.adminHome > button {
+  align-self: center;
+  width: 250px;
+  height: 30px;
+  border: 1px solid white;
+  background-color: var(--primary-orange);
+  border-radius: 15px;
+  color: white;
+}
+.userListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  border: 2px dotted var(--primary-green);
+  background-color: white;
+  border-radius: 15px;
+}
+.userCreate {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  padding: var(--spacing);
+}
+.userCreate > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  justify-content: center;
+}
+.userCreate > div > label {
+  display: flex;
+  gap: var(--spacing);
+}
+.userCreate > div > label > strong {
+  padding: 5px;
+}
+.userCreate > div > label > input {
+  border-radius: 15px;
+  border: 1px solid black;
+  width: 30%;
+  padding-left: 15px;
+}
+.userCreate > button {
+  width: 150px;
+  height: 30px;
+  border: none;
+  background-color: var(--primary-green);
+  color: white;
+  border-radius: 15px;
+}
+.usersList {
+  padding: var(--spacing);
+  border-top: 1px solid var(--primary-green);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.usersList > h3 {
+  text-align: center;
+  color: var(--primary-green);
+}
+.usersList > ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
