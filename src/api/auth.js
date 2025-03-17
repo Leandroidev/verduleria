@@ -16,9 +16,13 @@ export const adminLogin = async (credentials) => {
 // Inicio de sesión para usuarios
 export const userLogin = async (credentials) => {
   try {
-    const response = await apiClient.post("/user/logIn", credentials);
-
-    return response.data; // Retorna el token JWT
+    if (credentials.owner) {
+      const response = await apiClient.post("/admin/logIn", credentials);
+      return response.data; // Retorna el token JWT
+    } else {
+      const response = await apiClient.post("/user/logIn", credentials);
+      return response.data; // Retorna el token JWT
+    }
   } catch (error) {
     throw new Error(
       error.response?.data?.message || "Error al iniciar sesión como usuario"

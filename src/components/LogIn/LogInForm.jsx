@@ -2,14 +2,19 @@ import React, { useState, useContext, useEffect } from "react";
 import { LogInContext } from "../../context/logIn";
 import "./LogInForm.css";
 
-function LogInForm() {
+function LogInForm({ owner }) {
+  console.log(owner);
+
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const { login, error } = useContext(LogInContext);
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    await login({ userName, password });
+    if (owner) {
+      await login({ userName, password, owner: owner });
+    } else {
+      await login({ userName, password });
+    }
   };
 
   return (

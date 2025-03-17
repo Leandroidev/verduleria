@@ -2,9 +2,7 @@ import React, { useContext, useEffect } from "react";
 import LogInForm from "../components/LogIn/LogInForm";
 import { LogInContext } from "../context/logIn";
 import { useNavigate } from "react-router-dom";
-function LogInPage(props) {
-  const { owner } = props;
-
+function OwnerLogInPage() {
   const navigate = useNavigate();
   const { isAuthenticated } = useContext(LogInContext);
 
@@ -13,10 +11,8 @@ function LogInPage(props) {
       navigate("/Productos");
     }
   }, [isAuthenticated]);
-  if (owner) return <LogInForm owner={owner} />;
-  else {
-    return <LogInForm />;
-  }
+
+  return <LogInForm owner={true} />;
 }
 
-export default LogInPage;
+export default OwnerLogInPage;
