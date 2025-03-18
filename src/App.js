@@ -1,4 +1,4 @@
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout.jsx";
 import "./App.css";
 import Home from "./pages/Home.jsx";
@@ -8,7 +8,7 @@ import LogInPage from "./pages/LogInPage.jsx";
 import OwnerPage from "./pages/OwnerPage.jsx";
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Layout>
         <Routes>
           <Route path="/" element={<ProductsPage />} />
@@ -21,7 +21,7 @@ function App() {
           <Route path="/admin/home" element={<OwnerPage />} />
         </Routes>
       </Layout>
-    </Router>
+    </BrowserRouter>
   );
 }
 
