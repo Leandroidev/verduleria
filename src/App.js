@@ -17,7 +17,7 @@ function App() {
           <Route path="/Productos" element={<ProductsPage />} />
           <Route path="/Carrito" element={<CartPage />} />
           <Route path="/LogIn" element={<LogInPage />} />
-          <Route path="/admin/LogIn" element={<LogInPage owner={true} />} />
+          <Route path="/admin/LogIn" element={<LogInPage />} />
           <Route path="/admin/home" element={<OwnerPage />} />
         </Routes>
       </Layout>

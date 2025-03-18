@@ -17,6 +17,7 @@
   object-fit: cover;
   background-color: white;
   border: 1px solid var(--primary-green);
+  font-size: 0;
 }
 .cartItemName {
   display: -webkit-box; /* Necesario para usar line-clamp */

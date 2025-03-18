@@ -22,5 +22,6 @@
     display: grid;
     grid-template-columns: repeat(4, 240px);
     gap: 0.5rem;
+    justify-self: center;
   }
 }
