@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/verduleria/static/css/main.049445e2.css",
-    "main.js": "/verduleria/static/js/main.08a25447.js",
+    "main.js": "/verduleria/static/js/main.afe89163.js",
     "static/js/488.9620cba8.chunk.js": "/verduleria/static/js/488.9620cba8.chunk.js",
     "static/media/BrandLogo.png": "/verduleria/static/media/BrandLogo.576b15c3bbf504c6fa05.png",
     "index.html": "/verduleria/index.html",
     "main.049445e2.css.map": "/verduleria/static/css/main.049445e2.css.map",
-    "main.08a25447.js.map": "/verduleria/static/js/main.08a25447.js.map",
+    "main.afe89163.js.map": "/verduleria/static/js/main.afe89163.js.map",
     "488.9620cba8.chunk.js.map": "/verduleria/static/js/488.9620cba8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.049445e2.css",
-    "static/js/main.08a25447.js"
+    "static/js/main.afe89163.js"
   ]
 }
