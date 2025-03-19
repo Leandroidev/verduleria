@@ -15,7 +15,10 @@
 }
 @media (min-width: 1024px) {
   .productListContainer {
+    display: flex;
+    flex-direction: column;
     justify-self: center;
+    align-self: center;
     font-size: 1rem;
   }
   .productListContainer ul {
@@ -25,6 +28,7 @@
     justify-self: center;
   }
 }
+
 .toggleShopButton {
   margin-bottom: 16px;
   padding: 10px 10px;

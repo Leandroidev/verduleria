@@ -32,12 +32,14 @@ function ProductList() {
   return (
     <main className="productListContainer">
       {isAuthenticated ? (
-        <button
-          onClick={toggleShop}
-          className={`toggleShopButton ${isOpen ? "open" : "closed"}`}
-        >
-          {isOpen ? "Cerrar local" : "Abrir local"}
-        </button>
+        <div>
+          <button
+            onClick={toggleShop}
+            className={`toggleShopButton ${isOpen ? "open" : "closed"}`}
+          >
+            {isOpen ? "Cerrar local" : "Abrir local"}
+          </button>
+        </div>
       ) : null}
 
       <ul>
