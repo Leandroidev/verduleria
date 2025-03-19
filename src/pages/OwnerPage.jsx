@@ -9,18 +9,13 @@ function OwnerPage() {
   const { isAuthenticated, role } = useContext(AuthContext);
   const { users, fetchUsers } = useContext(UserContext);
   const [togglePanel, setTogglePanel] = useState(true);
-  /*useEffect(() => {
-    if (!isAuthenticated) {
-      navigate("/Productos");
-    }
-  }, [isAuthenticated]);*/
+
   useEffect(() => {
     if (!isAuthenticated || role !== "owner") {
       navigate("/Productos");
     } else {
-      fetchUsers(); // Cargar usuarios si es "owner"
+      fetchUsers();
     }
-    console.log(role);
   }, [isAuthenticated, role]);
 
   return (
@@ -47,30 +42,6 @@ function OwnerPage() {
         <p>No tienes acceso a esta sección.</p>
       )}
     </main>
-
-    /*<main className="adminHome">
-      {!isAuthenticated ? (
-        <></>
-      ) : (
-        <>
-          {togglePanel ? (
-            <>
-              <button onClick={() => setTogglePanel(!togglePanel)}>
-                Users Panel
-              </button>
-              <ProductList />{" "}
-            </>
-          ) : (
-            <>
-              <button onClick={() => setTogglePanel(!togglePanel)}>
-                Products Panel
-              </button>
-              <UserList />
-            </>
-          )}
-        </>
-      )}
-    </main>*/
   );
 }
 

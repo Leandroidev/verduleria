@@ -1,10 +1,9 @@
 import apiClient from "./apiClient.js";
 
-// Obtener todos los productos
 export const getUsers = async () => {
   try {
     const response = await apiClient.get("/user");
-    return response.data; // Retorna la lista de productos
+    return response.data;
   } catch (error) {
     throw new Error(
       error.response?.data?.message || "Error al obtener los usuarios"
@@ -15,7 +14,7 @@ export const getUsers = async () => {
 export const createUser = async (userData) => {
   try {
     const response = await apiClient.post("/user", userData);
-    return response.data; // Retorna el producto creado
+    return response.data;
   } catch (error) {
     throw new Error(
       error.response?.data?.message || "Error al crear el usuario"

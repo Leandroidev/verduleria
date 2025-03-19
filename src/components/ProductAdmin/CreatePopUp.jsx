@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import "./EditPopUp.css"; // Puedes reutilizar los estilos
+import "./EditPopUp.css";
 import { ProductContext } from "../../context/products";
 import {
   cleanFormData,
@@ -8,7 +8,7 @@ import {
 } from "../../utils/formUtils";
 
 function CreatePopUp({ setIsCreating }) {
-  const { addProduct } = useContext(ProductContext); // Llamar a addProduct del contexto
+  const { addProduct } = useContext(ProductContext);
   const [formData, setFormData] = useState({
     img: "",
     name: "",
@@ -21,33 +21,27 @@ function CreatePopUp({ setIsCreating }) {
   });
   const [errors, setErrors] = useState({});
 
-  // Manejar cambios en los inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Convertir valores numéricos
     const newValue = convertToNumber(name, value);
 
     setFormData((prevData) => {
       const newData = { ...prevData, [name]: newValue };
-      const newErrors = validateFormData(newData); // Validar datos
+      const newErrors = validateFormData(newData);
       setErrors(newErrors);
       return newData;
     });
   };
 
-  // Verificar errores en el formulario
   const hasErrors = () => Object.values(errors).some((error) => error !== "");
 
-  // Manejar el envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!hasErrors()) {
-      console.log(formData);
-
-      addProduct(formData); // Llamar a addProduct
-      setIsCreating(false); // Cerrar el popup
+      addProduct(formData);
+      setIsCreating(false);
     }
   };
 

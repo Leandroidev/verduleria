@@ -30,7 +30,6 @@ export const cartReducer = (state, action) => {
         newCart[productInCartIndex].quantity -= 1;
         if (newCart[productInCartIndex].quantity === 0) {
           return newCart.filter((item) => item.id !== action.payload.id);
-          //return reducer(state, { type: "REMOVE_FROM_CART", payload: action.payload });
         }
         return newCart;
       }

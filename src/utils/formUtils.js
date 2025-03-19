@@ -34,7 +34,7 @@ export const convertToNumber = (name, value) => {
   if (name === "weight") {
     return parseInt(value, 10);
   }
-  return value; // Para campos no numéricos, retornar el valor original
+  return value;
 };
 export const cleanFormData = (data) => {
   return Object.fromEntries(

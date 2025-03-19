@@ -1,8 +1,6 @@
 import axios from "axios";
-const URL = "http://localhost:5000" || process.env.APIURL;
-//const URL = "https://verduleria-restapi.onrender.com" || process.env.APIURL;
+const URL = "https://verduleria-restapi.onrender.com" || process.env.APIURL;
 
-//https://verduleria-restapi.onrender.com
 const apiClient = axios.create({
   baseURL: URL,
   headers: {

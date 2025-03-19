@@ -5,12 +5,12 @@ import { AuthContext } from "./auth";
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const { role } = useContext(AuthContext); // Accedemos al rol desde AuthContext
+  const { role } = useContext(AuthContext);
   const [users, setUsers] = useState([]);
   const [error, setError] = useState(null);
 
   const fetchUsers = async () => {
-    if (role !== "owner") return; // Restringir acceso si no es "owner"
+    if (role !== "owner") return;
     setError(null);
     try {
       const data = await getUsers();
@@ -21,8 +21,7 @@ export const UserProvider = ({ children }) => {
   };
 
   const addUser = async (newUser) => {
-    if (role !== "owner") return; // Restringir acceso si no es "owner"
-    setError(null);
+    if (role !== "owner") return;
     try {
       await createUser(newUser);
       fetchUsers();
@@ -32,7 +31,7 @@ export const UserProvider = ({ children }) => {
   };
 
   const removeUser = async (userId) => {
-    if (role !== "owner") return; // Restringir acceso si no es "owner"
+    if (role !== "owner") return;
     setError(null);
     try {
       await deleteUser(userId);

@@ -23,11 +23,10 @@ function NavbarLink({
     <Link
       to={to}
       className={`navBarLink ${showActive && isActive ? "active" : ""}`}
-      aria-label={label} // Siempre se usa para accesibilidad
+      aria-label={label}
       onClick={fn}
     >
       <div className="navBarIcon">{icon}</div>
-      {/* Renderiza el label solo si showLabel es true */}
       {showLabel && <p>{label}</p>}
     </Link>
   );

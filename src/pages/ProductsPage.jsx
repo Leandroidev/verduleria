@@ -8,7 +8,7 @@ import { ShopContext } from "../context/shop";
 function Products() {
   const navigate = useNavigate();
   const { isAuthenticated, role } = useContext(AuthContext);
-  const { isOpen, toggleShop } = useContext(ShopContext); // Usar estado y acción del ShopContext
+  const { isOpen, toggleShop } = useContext(ShopContext);
 
   useEffect(() => {
     if (isAuthenticated && role === "owner") {

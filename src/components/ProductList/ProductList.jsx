@@ -5,27 +5,23 @@ import Product from "../Product/Product";
 import { useFilters } from "../../hooks/useFilters";
 import { ProductContext } from "../../context/products";
 import { AuthContext } from "../../context/auth";
-import { ShopContext } from "../../context/shop"; // Importamos el contexto de la tienda
+import { ShopContext } from "../../context/shop";
 import ClosedPage from "../../pages/ClosedPage";
 
 function ProductList() {
   const { filteredProducts } = useFilters();
   const { products, loading } = useContext(ProductContext);
   const { isAuthenticated } = useContext(AuthContext);
-  const { isOpen, toggleShop } = useContext(ShopContext); // Usar estado y acción del ShopContext
+  const { isOpen, toggleShop } = useContext(ShopContext);
   const [filtered, setFiltered] = useState([]);
 
   useEffect(() => {
-    console.log("cambio un producto");
-
     if (!loading) {
-      setFiltered(filteredProducts(products.products)); // Filtrar los productos basados en los filtros
+      setFiltered(filteredProducts(products.products));
     }
   }, [loading, products, filteredProducts]);
 
-  // Mostrar un indicador de carga mientras se cargan los productos
   if (!isAuthenticated && !loading && !isOpen) {
-    // Mostrar ClosedPage si no está autenticado, no está cargando, y el local está cerrado
     return (
       <main className="productListContainer">
         <ClosedPage />
@@ -40,11 +36,10 @@ function ProductList() {
           onClick={toggleShop}
           className={`toggleShopButton ${isOpen ? "open" : "closed"}`}
         >
-          {isOpen ? "Close Shop" : "Open Shop"}
+          {isOpen ? "Cerrar local" : "Abrir local"}
         </button>
       ) : null}
 
-      {/* Renderizar ul sólo si no corresponde ClosedPage */}
       <ul>
         {isAuthenticated && !loading ? (
           <>

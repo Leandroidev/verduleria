@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   const [userName, setUserName] = useState(
     localStorage.getItem("userName") || null
   );
-  const [role, setRole] = useState(localStorage.getItem("role") || null); // Nuevo estado para el rol
+  const [role, setRole] = useState(localStorage.getItem("role") || null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [error, setError] = useState(null);
 
@@ -23,11 +23,11 @@ export const AuthProvider = ({ children }) => {
 
       localStorage.setItem("token", newToken);
       localStorage.setItem("userName", newUserName);
-      localStorage.setItem("role", newRole); // Guardar el rol en localStorage
+      localStorage.setItem("role", newRole);
 
       setToken(newToken);
       setUserName(newUserName);
-      setRole(newRole); // Establecer el rol en el estado
+      setRole(newRole);
       setIsAuthenticated(true);
     } catch (err) {
       setError(err.message);
@@ -48,12 +48,10 @@ export const AuthProvider = ({ children }) => {
     const actualRol = localStorage.getItem("role");
     if (token) {
       try {
-        console.log(actualRol);
-
         const { role: validatedRole } = await sessionActive(actualRol);
 
         setIsAuthenticated(true);
-        setRole(validatedRole); // Validar y actualizar el rol desde el backend
+        setRole(validatedRole);
       } catch {
         logout();
       }

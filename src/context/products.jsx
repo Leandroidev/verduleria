@@ -53,8 +53,6 @@ export const ProductProvider = ({ children }) => {
 
   // Función para actualizar un producto existente
   const editProduct = async (productId, updatedData) => {
-    console.log("editando");
-
     try {
       const updatedProduct = await updateProduct(productId, updatedData);
       const updatedProducts = products.products.map((product) =>
@@ -73,8 +71,6 @@ export const ProductProvider = ({ children }) => {
 
   // Función para eliminar un producto
   const removeProduct = async (productId) => {
-    console.log("borrando");
-
     try {
       await deleteProduct(productId);
       const updatedProducts = products.products.filter(

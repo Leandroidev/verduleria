@@ -5,8 +5,7 @@ import {
   cleanFormData,
   convertToNumber,
   validateFormData,
-} from "../../utils/formUtils"; // Archivo externo para limpieza de datos
-
+} from "../../utils/formUtils";
 function EditPopUp({ product, setIsEditing }) {
   const { editProduct } = useContext(ProductContext);
   const [formData, setFormData] = useState({
@@ -21,18 +20,14 @@ function EditPopUp({ product, setIsEditing }) {
   });
   const [errors, setErrors] = useState({});
 
-  // Manejador de cambios en los inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Convertir valores numéricos a flotantes o enteros
     const newValue = convertToNumber(name, value);
 
-    // Actualizar estado con el nuevo valor
     setFormData((prevData) => {
       const newData = { ...prevData, [name]: newValue };
 
-      // Validar los datos actualizados
       const newErrors = validateFormData(newData);
       setErrors(newErrors);
 
@@ -40,20 +35,16 @@ function EditPopUp({ product, setIsEditing }) {
     });
   };
 
-  // Función para verificar si hay errores en el formulario
   const hasErrors = () => {
     return Object.values(errors).some((error) => error !== "");
   };
 
-  // Manejador de envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!hasErrors()) {
-      // Limpiar campos vacíos antes de enviar
       const cleanedData = cleanFormData(formData);
 
-      // Llamar a la función para editar el producto
       editProduct(formData.id, cleanedData);
       setIsEditing(false);
     }
@@ -174,7 +165,6 @@ function EditPopUp({ product, setIsEditing }) {
               <option value="mayorista">Mayorista</option>
             </select>
           </label>
-          {/* Botón de envío deshabilitado si hay errores */}
           <button type="submit" disabled={hasErrors()}>
             Save changes
           </button>

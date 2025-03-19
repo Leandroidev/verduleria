@@ -30,14 +30,10 @@ function ProductAdmin({ product, add }) {
     return (
       <li className="product">
         {isCreating && <CreatePopUp setIsCreating={setIsCreating} />}{" "}
-        {/* Mostrar el popup */}
-        <div></div>
-        <div className="productName">
-          <strong>Create New Product</strong>
-        </div>
-        <div className="productPanel">
-          <button onClick={() => setIsCreating(true)}>Create</button>{" "}
-          {/* Botón para abrir popup */}
+        <div className="addProduct">
+          <button onClick={() => setIsCreating(true)}>
+            Crear Producto
+          </button>{" "}
         </div>
       </li>
     );
