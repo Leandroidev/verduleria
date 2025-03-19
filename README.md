@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# :tomato: Hommie Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Descripción del Proyecto
 
-## Available Scripts
+El frontend de **Verduleria de Lea** es una interfaz interactiva y funcional para la gestión de mercaderia y el control de una verduleria . Está diseñada para proporcionar una experiencia de usuario intuitiva, adaptándose tanto a usuarios finales como a administradores/empleados. Este proyecto utiliza **React.js** junto con **Context API** para una gestión eficiente del estado global y ofrece una interfaz moderna, responsiva y dinámica. Ademas de utilizar **Reducer** para manejar el estado del carrito e implementa **Local Storage** para la persistencia de productos y usuarios, gestiona sus peticiones a la APi
+con **Axios**.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+### Funcionalidades Principales
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### **1. Gestión de Productos**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Visualización de Productos:**
+  - Los usuarios pueden navegar y explorar los productos disponibles. Ademas de cargarlos a su carrito para posteriormente enviarlos por WhatsApp
+- **CRUD Completo (Productos):**
+  - Crear, Editar y Eliminar productos directamente desde la interfaz. Siempre y cuando se tengan privilegios de "dueño" o "administrador"
+- **Read Create Delete (administradores):**
+  - Lista, crea y borra usuarios, siempre y cuando se tengan privilegios de "dueño"
+- **Filtrado Dinámico:**
+  - Búsqueda y filtrado de productos según categorías y atributos.
 
-### `npm test`
+#### **2. Estado del Local (Shop)**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Alternar Estado de Apertura/Cierre:**
+  - Botón dinámico que permite a los administradores abrir o cerrar el local.
+  - Cambios reflejados visualmente y sincronizados con el backend.
+- **Pantalla de Local Cerrado:**
+  - Si el local está cerrado, los usuarios finales ven un mensaje claro indicando el estado.
 
-### `npm run build`
+#### **3. Roles de Usuarios**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Diferenciación de Roles:**
+  - El dueño tiene acceso a todas las herramientas.
+  - Los administradores tienen acceso a herramientas de gestion de mercaderia y cierre/apertura del local.
+  - Los usuarios finales solo ven los productos disponibles y no pueden realizar cambios, solo agregar productos al carrito.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### **4. Interfaz Amigable**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Popups Interactivos:**
+  - Modales para la creación y edición de productos con validación de formularios.
+- **Indicadores Visuales:**
+  - Colores dinámicos en los botones para reflejar el estado actual del local (verde para abierto, rojo para cerrado).
+- **Diseño Responsivo:**
+  - Adaptado para funcionar en diferentes tamaños de pantalla, desde móviles hasta escritorio.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Tecnologías Utilizadas
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Librerías y Frameworks:**
+  - Axios (para el manejo de peticiones)
+  - React.js
+  - React Router DOM (para manejo de rutas).
+- **Gestión de Estado:**
+  - Context API.
+- **Estilizado:**
+  - CSS Modules y estilos personalizados.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Cómo Ejecutar el Frontend
 
-## Learn More
+#### **Requisitos Previos**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Tener Node.js y npm instalados en tu máquina.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### **Pasos:**
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clonar este repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/hommie-frontend.git
+   ```

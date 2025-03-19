@@ -1,4 +1,3 @@
-// src/context/ProductContext.js
 import React, { createContext, useState, useEffect, useContext } from "react";
 import {
   getProducts,
@@ -13,19 +12,18 @@ const LOCAL_STORAGE_KEY = "products";
 export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
-  const [products, setProducts] = useState([]); // Estado para almacenar los productos
-  const [loading, setLoading] = useState(true); // Estado para manejar la carga
-  const [error, setError] = useState(null); // Estado para manejar errores
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const { isAuthenticated } = useContext(AuthContext);
-  // Función para cargar los productos
   const fetchProducts = async () => {
     setLoading(true);
     setError(null);
     try {
       const data = await getProducts();
 
-      setProducts(data); // Asegúrate de que data sea un array
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data)); // Guarda en localStorage
+      setProducts(data);
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
     } catch (err) {
       setError(err.message);
       setProducts({ ...products, products: [] });
@@ -51,7 +49,6 @@ export const ProductProvider = ({ children }) => {
     }
   };
 
-  // Función para actualizar un producto existente
   const editProduct = async (productId, updatedData) => {
     try {
       const updatedProduct = await updateProduct(productId, updatedData);
@@ -69,13 +66,12 @@ export const ProductProvider = ({ children }) => {
     }
   };
 
-  // Función para eliminar un producto
   const removeProduct = async (productId) => {
     try {
       await deleteProduct(productId);
       const updatedProducts = products.products.filter(
         (product) => product.id !== productId
-      ); // Remover del estado local
+      );
       const newProducts = {
         ...products,
         products: updatedProducts,
@@ -85,26 +81,18 @@ export const ProductProvider = ({ children }) => {
     } catch (err) {
       setError(err.message);
     }
-  }; /*
+  };
   useEffect(() => {
-    if (isAuthenticated) {
-      fetchProducts();
-    } // Carga desde la API
-  }, [isAuthenticated]);*/
-  // Cargar productos al inicializar
-  useEffect(() => {
-    fetchProducts(); // Carga desde la API
+    fetchProducts();
   }, [isAuthenticated]);
 
-  // Valor del contexto
   const value = {
     products,
     loading,
     error,
-    // Mantener esta función
-    addProduct, // Mantener esta función
-    editProduct, // Mantener esta función
-    removeProduct, // Mantener esta función
+    addProduct,
+    editProduct,
+    removeProduct,
   };
 
   return (
