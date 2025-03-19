@@ -1,6 +1,14 @@
 # :tomato: Verduleria Frontend
 
+---
+
 ## [IR AL PROYECTO ONLINE (desplegado en netlify)](https://brilliant-conkies-4ca1b8.netlify.app/)
+
+---
+
+## [Conoce la RESTAPI del proyecto](https://github.com/Leandroidev/verduleria-RestApi)
+
+---
 
 ### Descripción del Proyecto
 
@@ -66,8 +74,6 @@ con **Axios**.
   - CSS Modules y estilos personalizados.
 
 ---
-
-### [Conoce la RESTAPI del proyecto](https://github.com/Leandroidev/verduleria-RestApi)
 
 ### Pendientes
 
