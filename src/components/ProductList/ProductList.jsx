@@ -4,17 +4,14 @@ import ProductAdmin from "../ProductAdmin/ProductAdmin";
 import Product from "../Product/Product";
 import { useFilters } from "../../hooks/useFilters";
 import { ProductContext } from "../../context/products";
-import { LogInContext } from "../../context/logIn";
-
+import { AuthContext } from "../../context/auth";
 function ProductList() {
   const { filteredProducts } = useFilters();
-  const { products, loading, error, fetchProducts } =
-    useContext(ProductContext);
-  const { isAuthenticated } = useContext(LogInContext);
+  const { products, loading } = useContext(ProductContext);
+  const { isAuthenticated, role } = useContext(AuthContext);
 
   const [filtered, setFiltered] = useState([]);
 
-  // Actualizar los productos filtrados cuando cambien los productos o el estado de carga
   useEffect(() => {
     if (!loading && Array.isArray(products)) {
       setFiltered(filteredProducts(products));
@@ -24,9 +21,21 @@ function ProductList() {
   // Mostrar un indicador de carga mientras se cargan los productos
 
   return (
+    /*
     <main className="productListContainer">
       <ul>
         {isAuthenticated
+          ? filtered.map((product) => (
+              <ProductAdmin product={product} key={product.id} />
+            ))
+          : filtered.map((product) => (
+              <Product product={product} key={product.id} />
+            ))}
+      </ul>
+    </main>*/
+    <main className="productListContainer">
+      <ul>
+        {isAuthenticated && role === "owner"
           ? filtered.map((product) => (
               <ProductAdmin product={product} key={product.id} />
             ))

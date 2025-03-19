@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import NavBarLink from "./NavBarLink";
 import Logo from "../Logo/Logo";
 import "./NavBar.css";
@@ -9,12 +9,10 @@ import {
   LogoutIcon,
 } from "../Icons/Icons.jsx";
 import { useCart } from "../../hooks/useCart.jsx";
-import { LogInContext } from "../../context/logIn.jsx";
-import { ProductContext } from "../../context/products.jsx";
+import { AuthContext } from "../../context/auth.jsx";
 function NavBar() {
   const { getCartQuantity } = useCart();
-  const { logout, isAuthenticated } = useContext(LogInContext);
-  const { setProducts } = useContext(ProductContext);
+  const { logout, isAuthenticated, role } = useContext(AuthContext);
 
   return (
     <div className="navBar">

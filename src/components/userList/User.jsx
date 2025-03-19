@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { DeleteCanSvg } from "../Icons/Icons";
 import "./User.css";
-import { LogInContext } from "../../context/logIn";
+import { UserContext } from "../../context/user";
 function User({ user }) {
-  const { removeUser } = useContext(LogInContext);
+  const { removeUser } = useContext(UserContext);
   return (
     <li className="userItem">
       <div className="userName">

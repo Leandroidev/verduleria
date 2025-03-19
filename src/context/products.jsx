@@ -6,7 +6,7 @@ import {
   updateProduct,
   deleteProduct,
 } from "../api/product.js";
-import { LogInContext } from "./logIn.jsx";
+import { AuthContext } from "./auth";
 
 const LOCAL_STORAGE_KEY = "products";
 
@@ -16,7 +16,7 @@ export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]); // Estado para almacenar los productos
   const [loading, setLoading] = useState(true); // Estado para manejar la carga
   const [error, setError] = useState(null); // Estado para manejar errores
-  const { isAuthenticated } = useContext(LogInContext);
+  const { isAuthenticated } = useContext(AuthContext);
   // Función para cargar los productos
   const fetchProducts = async () => {
     setLoading(true);

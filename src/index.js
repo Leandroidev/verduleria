@@ -5,21 +5,22 @@ import reportWebVitals from "./reportWebVitals";
 import { FiltersProvider } from "./context/filters";
 import { CartProvider } from "./context/cart";
 import { ProductProvider } from "./context/products";
-import { LogInProvider } from "./context/logIn";
+import { AuthProvider } from "./context/auth"; // Asegúrate de importar correctamente
+import { UserProvider } from "./context/user"; // Asegúrate de importar correctamente
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <LogInProvider>
-    <ProductProvider>
-      <CartProvider>
-        <FiltersProvider>
-          <App />
-        </FiltersProvider>
-      </CartProvider>
-    </ProductProvider>
-  </LogInProvider>
+  <AuthProvider>
+    <UserProvider>
+      <ProductProvider>
+        <CartProvider>
+          <FiltersProvider>
+            <App />
+          </FiltersProvider>
+        </CartProvider>
+      </ProductProvider>
+    </UserProvider>
+  </AuthProvider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

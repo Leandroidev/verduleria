@@ -1,11 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import User from "./User";
 import "./UserList.css";
-import { LogInContext } from "../../context/logIn";
+import { UserContext } from "../../context/user";
+import { AuthContext } from "../../context/auth";
 import { useNavigate } from "react-router-dom";
 
 function UserList() {
-  const { isAuthenticated, users, addUser, error } = useContext(LogInContext);
+  const { users, addUser, error } = useContext(UserContext);
+  const { isAuthenticated } = useContext(AuthContext);
+
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
