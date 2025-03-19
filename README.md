@@ -1,4 +1,4 @@
-# :tomato: Hommie Frontend
+# :tomato: Verduleria Frontend
 
 ## [IR AL PROYECTO ONLINE (desplegado en netlify)](https://brilliant-conkies-4ca1b8.netlify.app/)
 

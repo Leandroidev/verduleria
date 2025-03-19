@@ -23,7 +23,7 @@ function ProductAdmin({ product, add }) {
     }
   };
   const handleAvailability = () => {
-    const newAvailability = { available: !product.available };
+    const newAvailability = { ...product, available: !product.available };
     editProduct(product.id, newAvailability);
   };
   if (add) {

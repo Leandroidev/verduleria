@@ -56,9 +56,11 @@ export const ProductProvider = ({ children }) => {
         product.id === productId ? updatedProduct : product
       );
       const newProducts = {
-        ...updatedProduct,
-        products: updatedProducts,
+        ...products,
+        products: [...updatedProducts],
       };
+      console.log(newProducts);
+
       setProducts(newProducts);
       updateLocalStorage(newProducts);
     } catch (err) {
@@ -74,7 +76,7 @@ export const ProductProvider = ({ children }) => {
       );
       const newProducts = {
         ...products,
-        products: updatedProducts,
+        products: [...updatedProducts],
       };
       setProducts(newProducts);
       updateLocalStorage(newProducts);
