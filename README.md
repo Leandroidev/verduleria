@@ -1,5 +1,7 @@
 # :tomato: Hommie Frontend
 
+## [IR AL PROYECTO ONLINE (desplegado en netlify)](brilliant-conkies-4ca1b8.netlify.app)
+
 ### Descripción del Proyecto
 
 El frontend de **Verduleria de Lea** es una interfaz interactiva y funcional para la gestión de mercaderia y el control de una verduleria . Está diseñada para proporcionar una experiencia de usuario intuitiva, adaptándose tanto a usuarios finales como a administradores/empleados. Este proyecto utiliza **React.js** junto con **Context API** para una gestión eficiente del estado global y ofrece una interfaz moderna, responsiva y dinámica. Ademas de utilizar **Reducer** para manejar el estado del carrito e implementa **Local Storage** para la persistencia de productos y usuarios, gestiona sus peticiones a la APi
@@ -8,6 +10,12 @@ con **Axios**.
 ---
 
 ### Funcionalidades Principales
+
+#### Rutas (las mas relevantes)
+
+- **/Productos**: Lleva a la lista de productos o paneles de administrador si se encuentra logeado
+- **/admin/logIn**: a esta ruta se accede manteniendo 3 segundos el click sobre el logo de la navbar y permite autentificar como dueño (**User**:userAdmin, **Password**:userPassword)
+- **/logIn**: permite el logeo como administrador (**User**:admin, **Password**:admin)
 
 #### **1. Gestión de Productos**
 
@@ -59,15 +67,10 @@ con **Axios**.
 
 ---
 
-### Cómo Ejecutar el Frontend
+### [Conoce la RESTAPI del proyecto](https://github.com/Leandroidev/verduleria-RestApi)
 
-#### **Requisitos Previos**
+### Pendientes
 
-- Tener Node.js y npm instalados en tu máquina.
-
-#### **Pasos:**
-
-1. Clonar este repositorio:
-   ```bash
-   git clone https://github.com/tu-usuario/hommie-frontend.git
-   ```
+- **Verificar datos del formulario en CreatePopUp**
+- **Conectar con WebSockets para una experiencia en tiempo real**
+- **Configurar el envio de mensajeria con los pedidos**
