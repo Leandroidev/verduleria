@@ -4,13 +4,13 @@ import { AuthContext } from "../context/auth";
 import { useNavigate } from "react-router-dom";
 function LogInPage() {
   const navigate = useNavigate();
-  const { isAuthenticated, userName } = useContext(AuthContext);
+  const { isAuthenticated, role } = useContext(AuthContext);
 
   useEffect(() => {
-    if (isAuthenticated && userName != "owner") {
+    if (isAuthenticated && role != "owner") {
       navigate("/Productos");
     }
-    if (isAuthenticated && userName == "owner") {
+    if (isAuthenticated && role == "owner") {
       navigate("/admin/home");
     }
   }, [isAuthenticated]);

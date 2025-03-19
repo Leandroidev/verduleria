@@ -4,6 +4,7 @@ import apiClient from "./apiClient.js";
 export const getProducts = async () => {
   try {
     const response = await apiClient.get("/products");
+
     return response.data; // Retorna la lista de productos
   } catch (error) {
     throw new Error(

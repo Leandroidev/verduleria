@@ -23,6 +23,7 @@ function Product({ product }) {
   if (!product.available) {
     return false;
   }
+
   return (
     <li className="product">
       <div>

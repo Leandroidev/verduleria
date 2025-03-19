@@ -8,9 +8,11 @@ import {
   DeleteCanSvg,
   PencilSvg,
 } from "../Icons/Icons";
-function ProductAdmin({ product }) {
+import CreatePopUp from "./CreatePopUp";
+function ProductAdmin({ product, add }) {
   const { removeProduct, editProduct } = useContext(ProductContext);
   const [isEditing, setIsEditing] = useState(false);
+  const [isCreating, setIsCreating] = useState(false);
   const displayWeight = (weight) => {
     if (weight < 1000) {
       return `${weight.toFixed(0)} g`;
@@ -24,7 +26,22 @@ function ProductAdmin({ product }) {
     const newAvailability = { available: !product.available };
     editProduct(product.id, newAvailability);
   };
-
+  if (add) {
+    return (
+      <li className="product">
+        {isCreating && <CreatePopUp setIsCreating={setIsCreating} />}{" "}
+        {/* Mostrar el popup */}
+        <div></div>
+        <div className="productName">
+          <strong>Create New Product</strong>
+        </div>
+        <div className="productPanel">
+          <button onClick={() => setIsCreating(true)}>Create</button>{" "}
+          {/* Botón para abrir popup */}
+        </div>
+      </li>
+    );
+  }
   return (
     <li className="product">
       {isEditing ? (

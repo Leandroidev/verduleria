@@ -16,9 +16,13 @@ export const userLogin = async (credentials) => {
     );
   }
 };
-export const sessionActive = async () => {
+export const sessionActive = async (role) => {
+  console.log(role);
+
   try {
-    const response = await apiClient.post("/user/sessionActive");
+    const response = await apiClient.post(
+      role == "owner" ? "/admin/sessionActive" : "/user/sessionActive"
+    );
     return response.data; // Retorna el token JWT
   } catch (error) {
     throw new Error(error.message || "Error al iniciar sesión como usuario");

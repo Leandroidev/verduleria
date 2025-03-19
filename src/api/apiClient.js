@@ -1,9 +1,8 @@
 import axios from "axios";
-//const URL = "http://localhost:5000" || process.env.APIURL;
-const URL = "https://verduleria-restapi.onrender.com" || process.env.APIURL;
+const URL = "http://localhost:5000" || process.env.APIURL;
+//const URL = "https://verduleria-restapi.onrender.com" || process.env.APIURL;
 
 //https://verduleria-restapi.onrender.com
-// Crear una instancia de Axios
 const apiClient = axios.create({
   baseURL: URL,
   headers: {
@@ -11,7 +10,6 @@ const apiClient = axios.create({
   },
 });
 
-// Interceptor para agregar el token JWT a las solicitudes
 apiClient.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");

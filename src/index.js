@@ -7,18 +7,20 @@ import { CartProvider } from "./context/cart";
 import { ProductProvider } from "./context/products";
 import { AuthProvider } from "./context/auth"; // Asegúrate de importar correctamente
 import { UserProvider } from "./context/user"; // Asegúrate de importar correctamente
-
+import { ShopProvider } from "./context/shop"; // Importar el nuevo ShopContext
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <AuthProvider>
     <UserProvider>
-      <ProductProvider>
-        <CartProvider>
-          <FiltersProvider>
-            <App />
-          </FiltersProvider>
-        </CartProvider>
-      </ProductProvider>
+      <ShopProvider>
+        <ProductProvider>
+          <CartProvider>
+            <FiltersProvider>
+              <App />
+            </FiltersProvider>
+          </CartProvider>
+        </ProductProvider>
+      </ShopProvider>
     </UserProvider>
   </AuthProvider>
 );

@@ -25,3 +25,22 @@
     justify-self: center;
   }
 }
+.toggleShopButton {
+  margin-bottom: 16px;
+  padding: 10px 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  width: 100px; /* Ancho fijo */
+  text-align: center; /* Centrar el texto dentro del botón */
+}
+
+.toggleShopButton.open {
+  background-color: red;
+}
+
+.toggleShopButton.closed {
+  background-color: var(--primary-green);
+}

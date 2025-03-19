@@ -23,21 +23,29 @@ export const ProductProvider = ({ children }) => {
     setError(null);
     try {
       const data = await getProducts();
-      setProducts(Array.isArray(data) ? data : []); // Asegúrate de que data sea un array
+
+      setProducts(data); // Asegúrate de que data sea un array
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data)); // Guarda en localStorage
     } catch (err) {
       setError(err.message);
-      setProducts([]); // Establece un array vacío en caso de error
+      setProducts({ ...products, products: [] });
     } finally {
       setLoading(false);
     }
   };
 
-  // Función para agregar un nuevo producto
+  const updateLocalStorage = (updatedProducts) => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedProducts));
+  };
   const addProduct = async (productData) => {
     try {
-      await createProduct(productData); // Crea el producto en la API
-      fetchProducts(); // Refresca los productos después de la creación
+      const newProduct = await createProduct(productData);
+      const newProducts = {
+        ...products,
+        products: [...products.products, newProduct],
+      };
+      setProducts(newProducts);
+      updateLocalStorage(newProducts);
     } catch (err) {
       setError(err.message);
     }
@@ -45,9 +53,19 @@ export const ProductProvider = ({ children }) => {
 
   // Función para actualizar un producto existente
   const editProduct = async (productId, updatedData) => {
+    console.log("editando");
+
     try {
-      await updateProduct(productId, updatedData); // Actualiza el producto en la API
-      fetchProducts(); // Refresca los productos después de la actualización
+      const updatedProduct = await updateProduct(productId, updatedData);
+      const updatedProducts = products.products.map((product) =>
+        product.id === productId ? updatedProduct : product
+      );
+      const newProducts = {
+        ...updatedProduct,
+        products: updatedProducts,
+      };
+      setProducts(newProducts);
+      updateLocalStorage(newProducts);
     } catch (err) {
       setError(err.message);
     }
@@ -55,9 +73,19 @@ export const ProductProvider = ({ children }) => {
 
   // Función para eliminar un producto
   const removeProduct = async (productId) => {
+    console.log("borrando");
+
     try {
-      await deleteProduct(productId); // Elimina el producto en la API
-      fetchProducts(); // Refresca los productos después de la eliminación
+      await deleteProduct(productId);
+      const updatedProducts = products.products.filter(
+        (product) => product.id !== productId
+      ); // Remover del estado local
+      const newProducts = {
+        ...products,
+        products: updatedProducts,
+      };
+      setProducts(newProducts);
+      updateLocalStorage(newProducts);
     } catch (err) {
       setError(err.message);
     }
@@ -77,7 +105,7 @@ export const ProductProvider = ({ children }) => {
     products,
     loading,
     error,
-    fetchProducts, // Mantener esta función
+    // Mantener esta función
     addProduct, // Mantener esta función
     editProduct, // Mantener esta función
     removeProduct, // Mantener esta función

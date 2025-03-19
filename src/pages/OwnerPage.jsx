@@ -20,6 +20,7 @@ function OwnerPage() {
     } else {
       fetchUsers(); // Cargar usuarios si es "owner"
     }
+    console.log(role);
   }, [isAuthenticated, role]);
 
   return (

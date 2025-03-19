@@ -45,9 +45,13 @@ export const AuthProvider = ({ children }) => {
   };
 
   const checkAuthentication = async () => {
+    const actualRol = localStorage.getItem("role");
     if (token) {
       try {
-        const { role: validatedRole } = await sessionActive();
+        console.log(actualRol);
+
+        const { role: validatedRole } = await sessionActive(actualRol);
+
         setIsAuthenticated(true);
         setRole(validatedRole); // Validar y actualizar el rol desde el backend
       } catch {

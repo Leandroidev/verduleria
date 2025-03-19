@@ -7,6 +7,7 @@ export function FiltersProvider({ children }) {
     category: "todos",
     searchTerm: "",
   });
+
   const filteredProducts = (products) => {
     if (products) {
       return products.filter((product) => {
