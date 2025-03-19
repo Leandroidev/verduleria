@@ -1,6 +1,6 @@
 # :tomato: Hommie Frontend
 
-## [IR AL PROYECTO ONLINE (desplegado en netlify)](www.brilliant-conkies-4ca1b8.netlify.app)
+## [IR AL PROYECTO ONLINE (desplegado en netlify)](https://brilliant-conkies-4ca1b8.netlify.app/)
 
 ### Descripción del Proyecto
 
