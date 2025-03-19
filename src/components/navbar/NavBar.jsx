@@ -10,10 +10,11 @@ import {
 } from "../Icons/Icons.jsx";
 import { useCart } from "../../hooks/useCart.jsx";
 import { LogInContext } from "../../context/logIn.jsx";
-
+import { ProductContext } from "../../context/products.jsx";
 function NavBar() {
   const { getCartQuantity } = useCart();
   const { logout, isAuthenticated } = useContext(LogInContext);
+  const { setProducts } = useContext(ProductContext);
 
   return (
     <div className="navBar">

@@ -6,7 +6,6 @@ function ProductFilter() {
   const categories = ["todos", "verduras", "frutas", "mayorista", "envasados"];
 
   const handleChangeCategory = (category) => {
-    console.log(category);
     setFilters((prevFilters) => ({
       ...prevFilters,
       category: category,
@@ -15,7 +14,6 @@ function ProductFilter() {
 
   const handleChangeSearchTerm = (event) => {
     const searchTerm = event.target.value;
-    console.log(searchTerm);
 
     setFilters((prevFilters) => ({
       ...prevFilters,

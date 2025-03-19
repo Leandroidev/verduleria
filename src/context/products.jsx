@@ -1,48 +1,37 @@
 // src/context/ProductContext.js
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 import {
   getProducts,
   createProduct,
   updateProduct,
   deleteProduct,
 } from "../api/product.js";
+import { LogInContext } from "./logIn.jsx";
 
-// Clave para localStorage
 const LOCAL_STORAGE_KEY = "products";
 
-// Crear el contexto
 export const ProductContext = createContext();
 
-// Proveedor del contexto
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]); // Estado para almacenar los productos
-  const [loading, setLoading] = useState(false); // Estado para manejar la carga
+  const [loading, setLoading] = useState(true); // Estado para manejar la carga
   const [error, setError] = useState(null); // Estado para manejar errores
-
+  const { isAuthenticated } = useContext(LogInContext);
   // Función para cargar los productos
   const fetchProducts = async () => {
     setLoading(true);
     setError(null);
     try {
       const data = await getProducts();
-      setProducts(data); // Actualiza el estado local
+      setProducts(Array.isArray(data) ? data : []); // Asegúrate de que data sea un array
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data)); // Guarda en localStorage
     } catch (err) {
       setError(err.message);
+      setProducts([]); // Establece un array vacío en caso de error
     } finally {
       setLoading(false);
     }
   };
-
-  // Cargar productos al inicializar
-  useEffect(() => {
-    const savedProducts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    if (savedProducts) {
-      setProducts(savedProducts); // Carga desde localStorage
-    } else {
-      fetchProducts(); // Carga desde la API
-    }
-  }, []);
 
   // Función para agregar un nuevo producto
   const addProduct = async (productData) => {
@@ -72,17 +61,26 @@ export const ProductProvider = ({ children }) => {
     } catch (err) {
       setError(err.message);
     }
-  };
+  }; /*
+  useEffect(() => {
+    if (isAuthenticated) {
+      fetchProducts();
+    } // Carga desde la API
+  }, [isAuthenticated]);*/
+  // Cargar productos al inicializar
+  useEffect(() => {
+    fetchProducts(); // Carga desde la API
+  }, [isAuthenticated]);
 
   // Valor del contexto
   const value = {
     products,
     loading,
     error,
-    fetchProducts,
-    addProduct,
-    editProduct,
-    removeProduct,
+    fetchProducts, // Mantener esta función
+    addProduct, // Mantener esta función
+    editProduct, // Mantener esta función
+    removeProduct, // Mantener esta función
   };
 
   return (

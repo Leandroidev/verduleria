@@ -8,16 +8,20 @@ export function FiltersProvider({ children }) {
     searchTerm: "",
   });
   const filteredProducts = (products) => {
-    return products.filter((product) => {
-      return (
-        (filters.category === "todos" &&
-          product.name
-            .toLowerCase()
-            .includes(filters.searchTerm.toLowerCase())) ||
-        (product.category === filters.category &&
-          product.name.toLowerCase().includes(filters.searchTerm.toLowerCase()))
-      );
-    });
+    if (products) {
+      return products.filter((product) => {
+        return (
+          (filters.category === "todos" &&
+            product.name
+              .toLowerCase()
+              .includes(filters.searchTerm.toLowerCase())) ||
+          (product.category === filters.category &&
+            product.name
+              .toLowerCase()
+              .includes(filters.searchTerm.toLowerCase()))
+        );
+      });
+    }
   };
   return (
     <FiltersContext.Provider

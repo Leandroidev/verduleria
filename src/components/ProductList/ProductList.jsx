@@ -5,22 +5,24 @@ import Product from "../Product/Product";
 import { useFilters } from "../../hooks/useFilters";
 import { ProductContext } from "../../context/products";
 import { LogInContext } from "../../context/logIn";
-import { useNavigate } from "react-router-dom";
-function ProductList() {
-  const navigate = useNavigate();
 
+function ProductList() {
   const { filteredProducts } = useFilters();
-  const { products } = useContext(ProductContext);
-  const { isAuthenticated, userName } = useContext(LogInContext); // Consumimos el estado de autenticación
-  const filtered = filteredProducts(products);
+  const { products, loading, error, fetchProducts } =
+    useContext(ProductContext);
+  const { isAuthenticated } = useContext(LogInContext);
+
+  const [filtered, setFiltered] = useState([]);
+
+  // Actualizar los productos filtrados cuando cambien los productos o el estado de carga
   useEffect(() => {
-    if (isAuthenticated && userName != "owner") {
-      navigate("/Productos");
+    if (!loading && Array.isArray(products)) {
+      setFiltered(filteredProducts(products));
     }
-    if (isAuthenticated && userName == "owner") {
-      navigate("/admin/home");
-    }
-  }, [isAuthenticated]);
+  }, [loading]);
+
+  // Mostrar un indicador de carga mientras se cargan los productos
+
   return (
     <main className="productListContainer">
       <ul>

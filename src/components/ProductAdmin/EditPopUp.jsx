@@ -53,13 +53,9 @@ function EditPopUp({ product, setIsEditing }) {
       // Limpiar campos vacíos antes de enviar
       const cleanedData = cleanFormData(formData);
 
-      console.log("Datos a enviar:", cleanedData);
-
       // Llamar a la función para editar el producto
       editProduct(formData.id, cleanedData);
       setIsEditing(false);
-    } else {
-      console.log("El formulario tiene errores");
     }
   };
 

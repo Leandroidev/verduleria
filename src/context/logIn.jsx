@@ -1,7 +1,8 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 import { sessionActive, userLogin } from "../api/auth";
 import { getUsers, deleteUser, createUser } from "../api/user.js";
 // Crear el contexto
+import { ProductContext } from "./products.jsx";
 export const LogInContext = createContext();
 
 // Proveedor del contexto
@@ -33,12 +34,9 @@ export const LogInProvider = ({ children }) => {
     }
   };
   const fetchUsers = async () => {
-    console.log("obteniendo usuarios");
-
     setError(null);
     try {
       const data = await getUsers();
-      console.log(data);
 
       setUsers(data); // Actualiza el estado local
       localStorage.setItem("users", JSON.stringify(data)); // Guarda en localStorage
@@ -48,6 +46,8 @@ export const LogInProvider = ({ children }) => {
   };
   // Función para cerrar sesión
   const logout = () => {
+    localStorage.removeItem("products");
+
     localStorage.removeItem("token");
     localStorage.removeItem("userName");
     localStorage.removeItem("users"); // Guarda en localStorage
@@ -94,7 +94,6 @@ export const LogInProvider = ({ children }) => {
     checkAuthentication();
     if (isAuthenticated) {
       const saveUsers = JSON.parse(localStorage.getItem("users"));
-      console.log(saveUsers);
 
       if (saveUsers) {
         setUsers(saveUsers);
