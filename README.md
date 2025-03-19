@@ -22,8 +22,8 @@ con **Axios**.
 #### Rutas (las mas relevantes)
 
 - **/Productos**: Lleva a la lista de productos o paneles de administrador si se encuentra logeado
-- **/admin/logIn**: a esta ruta se accede manteniendo 3 segundos el click sobre el logo de la navbar y permite autentificar como dueño (**User**:userAdmin, **Password**:userPassword)
-- **/logIn**: permite el logeo como administrador (**User**:admin, **Password**:admin)
+- **/admin/logIn**: a esta ruta se puede acceder manteniendo 3 segundos el click sobre el logo de la navbar y permite autentificar como dueño (**User**:userAdmin, **Password**:userPassword)
+- **/logIn**: a esta ruta se puede acceder dando 3 clicks consecutivos a el logo de la navbar, permite el logeo como administrador (**User**:admin, **Password**:admin)
 
 #### **1. Gestión de Productos**
 
