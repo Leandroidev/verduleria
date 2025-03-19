@@ -77,6 +77,6 @@ con **Axios**.
 
 ### Pendientes
 
-- **Verificar datos del formulario en CreatePopUp**
-- **Conectar con WebSockets para una experiencia en tiempo real**
-- **Configurar el envio de mensajeria con los pedidos**
+- [ ] **Verificar datos del formulario en CreatePopUp**
+- [ ] **Conectar con WebSockets para una experiencia en tiempo real**
+- [ ] **Configurar el envio de mensajeria con los pedidos**

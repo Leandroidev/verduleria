@@ -3,7 +3,11 @@ import apiClient from "./apiClient.js";
 export const userLogin = async (credentials) => {
   const currentUrl = window.location.pathname;
   try {
-    if (currentUrl == "/admin/logIn") {
+    if (
+      currentUrl == "/admin/login" ||
+      currentUrl == "/admin/LogIn" ||
+      currentUrl == "/admin/logIn"
+    ) {
       const response = await apiClient.post("/admin/logIn", credentials);
       return response.data;
     } else {
