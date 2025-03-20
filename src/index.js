@@ -12,15 +12,15 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <AuthProvider>
     <UserProvider>
-      <ShopProvider>
-        <ProductProvider>
+      <ProductProvider>
+        <ShopProvider>
           <CartProvider>
             <FiltersProvider>
               <App />
             </FiltersProvider>
           </CartProvider>
-        </ProductProvider>
-      </ShopProvider>
+        </ShopProvider>
+      </ProductProvider>
     </UserProvider>
   </AuthProvider>
 );

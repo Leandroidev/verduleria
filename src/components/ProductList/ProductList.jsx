@@ -19,7 +19,7 @@ function ProductList() {
     if (!loading) {
       setFiltered(filteredProducts(products.products));
     }
-  }, [loading, products, filteredProducts]);
+  }, [loading, products, filteredProducts, isOpen]);
 
   if (!isAuthenticated && !loading && !isOpen) {
     return (

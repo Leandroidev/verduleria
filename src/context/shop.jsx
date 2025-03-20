@@ -1,12 +1,15 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import apiClient from "../api/apiClient";
+
 import { AuthContext } from "./auth";
+import { ProductContext } from "./products";
 
 export const ShopContext = createContext();
 
 export const ShopProvider = ({ children }) => {
   const { isAuthenticated } = useContext(AuthContext);
-  const [isOpen, setIsOpen] = useState(false);
+  const { loading } = useContext(ProductContext);
+  const [isOpen, setIsOpen] = useState();
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -15,7 +18,7 @@ export const ShopProvider = ({ children }) => {
       const parsedData = JSON.parse(storedData);
       setIsOpen(parsedData.isOpen);
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, loading]);
 
   const toggleShop = async () => {
     try {

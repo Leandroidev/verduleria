@@ -6,7 +6,6 @@ import {
   deleteProduct,
 } from "../api/product.js";
 import { AuthContext } from "./auth";
-
 const LOCAL_STORAGE_KEY = "products";
 
 export const ProductContext = createContext();
@@ -16,6 +15,7 @@ export const ProductProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { isAuthenticated } = useContext(AuthContext);
+
   const fetchProducts = async () => {
     setLoading(true);
     setError(null);
@@ -24,6 +24,7 @@ export const ProductProvider = ({ children }) => {
 
       setProducts(data);
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
+      setLoading(false);
     } catch (err) {
       setError(err.message);
       setProducts({ ...products, products: [] });
@@ -59,7 +60,6 @@ export const ProductProvider = ({ children }) => {
         ...products,
         products: [...updatedProducts],
       };
-      console.log(newProducts);
 
       setProducts(newProducts);
       updateLocalStorage(newProducts);
