@@ -1,0 +1,33 @@
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: #333;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: url("https://img.freepik.com/vector-gratis/pegatina-tomate-sobre-fondo-blanco_1308-68575.jpg?t=st=1732505642~exp=1732509242~hmac=714984be08b11a3a4403c605c08c02e0ef853d4b065d59676ffcac7b2521c810&w=740")
+    no-repeat center center; /* Imagen del tomate */
+  background-size: cover;
+  animation: spin 1.5s linear infinite;
+}
+.loader-text {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #4caf50; /* Verde vibrante */
+  font-weight: bold;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -7,6 +7,7 @@ import { ProductContext } from "../../context/products";
 import { AuthContext } from "../../context/auth";
 import { ShopContext } from "../../context/shop";
 import ClosedPage from "../../pages/ClosedPage";
+import Loader from "../Loader/Loader";
 
 function ProductList() {
   const { filteredProducts } = useFilters();
@@ -21,6 +22,13 @@ function ProductList() {
     }
   }, [loading, products, filteredProducts, isOpen]);
 
+  if (loading) {
+    return (
+      <main className="productListContainer">
+        <Loader />
+      </main>
+    );
+  }
   if (!isAuthenticated && !loading && !isOpen) {
     return (
       <main className="productListContainer">
