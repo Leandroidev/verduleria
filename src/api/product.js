@@ -4,14 +4,18 @@ export const getProducts = async () => {
   try {
     const response = await apiClient.get("/products");
 
-    return response.data;
+    // Ordenar los productos por el atributo "name" en orden ascendente (A-Z)
+    const sortedProducts = response.data.products.sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
+
+    return { ...response.data, products: sortedProducts };
   } catch (error) {
     throw new Error(
       error.response?.data?.message || "Error al obtener los productos"
     );
   }
 };
-
 export const createProduct = async (productData) => {
   try {
     const response = await apiClient.post("/products", productData);
